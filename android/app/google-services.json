@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "105528087114",
+    "project_id": "companion-2fabe",
+    "storage_bucket": "companion-2fabe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105528087114:android:5864686c7cee31aef1ccb3",
+        "android_client_info": {
+          "package_name": "com.example.finaltwo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105528087114-ggrqchss99g8s9i3s1a7cmamhabk3ij8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI7aXHhQMO-2cNFO28jIbQtIMUN-Nxkz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105528087114-ggrqchss99g8s9i3s1a7cmamhabk3ij8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
