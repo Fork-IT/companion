@@ -1,3 +1,4 @@
+import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/music_page.dart';
 import 'package:finaltwo/ui/home_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -95,7 +96,7 @@ class ProfilePage extends StatelessWidget{
               //6.item
             }
             if (index == 6) {
-              Get.to(MusicPage());
+              Get.to(GetStart());
               //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage1()));
               //7.item
             }

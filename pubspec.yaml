@@ -127,5 +127,11 @@ flutter:
     - family: Alike
       fonts:
         - asset: fonts/Alike-Regular.ttf
+    - family: DynaPuff
+      fonts:
+        - asset: fonts/DynaPuff-Medium.ttf
+    - family: Merriweather
+      fonts:
+        - asset: fonts/Merriweather-Bold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

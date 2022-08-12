@@ -105,8 +105,8 @@ myModel.skip();
 
                           padding: const EdgeInsets.symmetric(vertical: 10 , horizontal: 15),
                           child:  Text("Next: ${ yogaindex >= ListOfYoga.length-1 ? "FINISH" : ListOfYoga[yogaindex].YogaTitle}" , style: const TextStyle(fontSize: 16 ,fontWeight: FontWeight.bold ,color: Colors.white),),
-                        )),
-
+                        )
+                    ),
                   ],
                 ),
               ),
@@ -121,6 +121,7 @@ myModel.skip();
                         width: MediaQuery.of(context).size.width,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
+
                           children: [
                             const Text("Pause" , style: TextStyle(fontSize: 40,color: Colors.white , fontWeight: FontWeight.bold),),
                             const SizedBox(height: 10,),
@@ -152,7 +153,8 @@ myModel.skip();
                             )
                           ],
                         ),
-                      ));
+                      ),
+                  );
                 },
               )
             ],
