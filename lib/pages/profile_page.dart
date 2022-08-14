@@ -1,6 +1,7 @@
 import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/music_page.dart';
 import 'package:finaltwo/ui/home_page.dart';
+import 'package:finaltwo/ui/home_page2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:finaltwo/Screens/Home.dart';
@@ -85,6 +86,7 @@ class ProfilePage extends StatelessWidget{
             }
             if (index == 3) {
               //4.item
+              Get.to(HomePage2());
             }
             if (index == 4) {
               Get.to(HomePage1());

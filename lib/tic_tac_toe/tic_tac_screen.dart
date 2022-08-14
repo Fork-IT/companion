@@ -3,10 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
-
-
   MainPage();
-
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -71,9 +68,9 @@ class _MainPageState extends State<MainPage> {
   Color getFieldColor(String value) {
     switch (value) {
       case Player.O:
-        return Colors.blue;
+        return Colors.pinkAccent;
       case Player.X:
-        return Colors.red;
+        return Colors.orange;
       default:
         return Colors.white;
     }
@@ -106,9 +103,9 @@ class _MainPageState extends State<MainPage> {
       });
 
       if (isWinner(x, y)) {
-        showEndDialog('Player $newValue Won');
+        showEndDialog('🥳 Player $newValue Won 🎉');
       } else if (isEnd()) {
-        showEndDialog('Undecided Game');
+        showEndDialog('🙂 Undecided Game 🙂');
       }
     }
   }
@@ -137,14 +134,14 @@ class _MainPageState extends State<MainPage> {
     barrierDismissible: false,
     builder: (context) => AlertDialog(
       title: Text(title),
-      content: const Text('Press to Restart the Game'),
+      content: const Text('Click here to play again !!'),
       actions: [
         ElevatedButton(
           onPressed: () {
             setEmptyFields();
             Navigator.of(context).pop();
           },
-          child: const Text('Restart'),
+          child: const Text('Play Again'),
         )
       ],
     ),

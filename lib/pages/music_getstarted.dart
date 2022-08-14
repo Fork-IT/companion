@@ -49,8 +49,17 @@ class _GetStartState extends State<GetStart> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: "Merriweather",
-                      color: Colors.red,
+                      color: Colors.green,
                       fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    "\n* Please wear Headphone  🎧  for the best experience !",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: "Merriweather",
+                      color: Colors.red,
+                      fontSize: 13,
                     ),
                   ),
                 ],
@@ -77,7 +86,7 @@ class _GetStartState extends State<GetStart> {
                 ),
                 child: Center(
                   child: Text(
-                    "Get Started",
+                     "Get Started",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,

@@ -1,32 +1,65 @@
 import 'package:flutter/material.dart';
 import '../ui/theme.dart';
 
+
 class MyButton extends StatelessWidget {
   final String label;
   final Function()? onTap;
-  const MyButton({Key? key, required this.label, required this.onTap}) : super(key : key);
+  const MyButton({Key? key, required this.label, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: onTap,
-        child: Container(
-          width: 120,
-          height: 60,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: primaryClr,
-          ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 21,
-              color: Colors.white,
-            ),
-          ),
+    return TextButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(15)),
+        backgroundColor: MaterialStateProperty.all<Color>(primaryClr),
+        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+                side: BorderSide(color: Colors.blueAccent)
+            )
         ),
+      ),
+      onPressed: onTap,
+      child: Text(
+          label,
+          style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold
+          )
+      ),
     );
   }
 }
+
+
+// class MyButton extends StatelessWidget {
+//   final String label;
+//   final Function()? onTap;
+//   const MyButton({Key? key, required this.label, required this.onTap}) : super(key : key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//         onTap: onTap,
+//         child: Container(
+//           width: 120,
+//           height: 60,
+//           decoration: BoxDecoration(
+//             borderRadius: BorderRadius.circular(20),
+//             color: primaryClr,
+//           ),
+//           child: Text(
+//             label,
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               fontWeight: FontWeight.bold,
+//               fontSize: 21,
+//               color: Colors.white,
+//             ),
+//           ),
+//         ),
+//     );
+//   }
+// }

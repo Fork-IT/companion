@@ -1,4 +1,4 @@
-import 'package:finaltwo/first_game/first_game_screen.dart';
+import 'package:finaltwo/match_pair/MatchPair.dart';
 import 'package:finaltwo/memory_game/screen/home.dart';
 import 'package:finaltwo/pages/splash.dart';
 import 'package:finaltwo/tic_tac_toe/tic_tac_screen.dart';
@@ -23,10 +23,10 @@ class GameDashboard extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Colors.blue[500]!,
-                Colors.blue[900]!,
-                Colors.cyan[900]!,
-                // Colors.blue[900]!,
+                Colors.orange[500]!,
+                Colors.pink[200]!,
+                Colors.yellow[100]!,
+                Colors.green[500]!,
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -40,7 +40,7 @@ class GameDashboard extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=>const FirstGameScreen()),
+                          builder: (context)=>const MatchPair()),
                     );
                   },
                   child: Container(
@@ -51,14 +51,14 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 160,
+                              height: 150,
                               child: Image.asset('assets/images/drag.png',)
                           ),
                           const Spacer(),
                           const Text(
                             'Match the pair',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.deepOrange,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
                             ),
@@ -68,7 +68,7 @@ class GameDashboard extends StatelessWidget {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white70,
                         borderRadius: BorderRadius.circular(15)
                     ),
                   ),
@@ -92,7 +92,7 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 160,
+                              height: 150,
                               child: Image.asset('assets/quiz.png',)
 
                           ),
@@ -100,7 +100,7 @@ class GameDashboard extends StatelessWidget {
                           const Text(
                             'Quick Quizzie',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.pinkAccent,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
                             ),
@@ -111,7 +111,7 @@ class GameDashboard extends StatelessWidget {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white70,
                         borderRadius: BorderRadius.circular(15)
                     ),
                   ),
@@ -134,7 +134,7 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 160,
+                              height: 150,
                               child: Image.asset('assets/images/memory.png',)
 
                           ),
@@ -142,7 +142,7 @@ class GameDashboard extends StatelessWidget {
                           const Text(
                             'Test Your Brain !!',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.green,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
                             ),
@@ -153,7 +153,7 @@ class GameDashboard extends StatelessWidget {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white70,
                         borderRadius: BorderRadius.circular(15)
 
                     ),
@@ -177,7 +177,7 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 160,
+                              height: 150,
                               child: Image.asset('assets/images/tic-tac-toe.png',)
 
                           ),
@@ -185,7 +185,7 @@ class GameDashboard extends StatelessWidget {
                           const Text(
                             'Tic Tac Toe Game',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.brown,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
                             ),
@@ -196,7 +196,7 @@ class GameDashboard extends StatelessWidget {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white70,
                         borderRadius: BorderRadius.circular(15)
 
                     ),
@@ -239,7 +239,7 @@ class GameDashboard extends StatelessWidget {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white70,
                         borderRadius: BorderRadius.circular(15)
 
                     ),
@@ -282,7 +282,7 @@ class GameDashboard extends StatelessWidget {
                     ),
                     margin: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white70,
                         borderRadius: BorderRadius.circular(15)
 
                     ),

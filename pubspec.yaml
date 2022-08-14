@@ -56,6 +56,11 @@ dependencies:
   flutter_staggered_animations: ^1.0.0
   flutter_local_notifications: ^9.7.0
   flutter_native_timezone: ^2.0.0
+  geolocator: ^9.0.1
+  google_maps_flutter: ^2.1.10
+  map_launcher: ^2.2.3
+  flutter_google_places: ^0.3.0
+  flutter_svg: #only if you want
   flutter_phone_direct_caller: ^2.1.1
   firebase_core: ^1.20.0
   firebase_auth: ^3.6.2
@@ -71,6 +76,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

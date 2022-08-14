@@ -1,3 +1,5 @@
+import 'package:finaltwo/db/db_helper2.dart';
+import 'package:finaltwo/services/yogadb.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -13,6 +15,7 @@ void main() async{
   await Firebase.initializeApp();
   await DBHelper.initDb();
   await DBHelper1.initDb();
+  await DBHelper2.initDb();
   runApp(LoginUiApp());
 }
 

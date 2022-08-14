@@ -64,8 +64,15 @@ class NotifyHelper {
         _convertTime(hour, minutes),
         //tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
         const NotificationDetails(
-            android: AndroidNotificationDetails('your channel id',
-                'your channel name', channelDescription: 'your channel description')),
+            android: AndroidNotificationDetails (
+                'your channel id 1',
+                'your channel name',
+                channelDescription: 'your channel description',
+                importance: Importance.max,
+                priority: Priority.high,
+                sound: RawResourceAndroidNotificationSound('a_long_cold_sting'),
+            )
+        ),
         androidAllowWhileIdle: true,
         uiLocalNotificationDateInterpretation:
         UILocalNotificationDateInterpretation.absoluteTime,
