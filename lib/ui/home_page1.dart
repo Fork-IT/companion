@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:finaltwo/controllers/task_controller1.dart';
 import 'package:finaltwo/notification_service.dart';
 import 'package:finaltwo/ui/add_task_bar1.dart';
@@ -5,13 +7,18 @@ import 'package:finaltwo/ui/theme1.dart';
 import 'package:finaltwo/widgets/buttons1.dart';
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:home_widget/home_widget.dart';
 import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 
 import '../models/task1.dart';
 import '../widgets/task_tile1.dart';
+
+
+
 
 class HomePage1 extends StatefulWidget {
   const HomePage1({Key? key}) : super(key : key);
@@ -33,6 +40,7 @@ class _HomePage1State extends State<HomePage1> {
     notifyHelper.initializeNotification();
     notifyHelper.requestIOSPermissions();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -282,6 +290,5 @@ class _HomePage1State extends State<HomePage1> {
         ),
       );
    }
-
 }
 

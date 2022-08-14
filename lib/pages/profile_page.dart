@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/music_page.dart';
 import 'package:finaltwo/ui/home_page.dart';
@@ -10,13 +12,16 @@ import 'package:finaltwo/pages/game_dashboard.dart';
 import 'package:finaltwo/pages/login_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
+import 'package:home_widget/home_widget.dart';
 import '../ui/home_page1.dart';
 import 'registration_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+
 class ProfilePage extends StatelessWidget{
   final Function(User?)? onSignOut;
   ProfilePage({this.onSignOut});
+
 
 //   @override
 //   State<StatefulWidget> createState() {
@@ -142,6 +147,9 @@ class ProfilePage extends StatelessWidget{
 
   double  _drawerIconSize = 24;
   double _drawerFontSize = 17;
+
+
+
 
   @override
   Widget build(BuildContext context) {
