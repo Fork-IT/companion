@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/music_page.dart';
+import 'package:finaltwo/pages/splash_screen.dart';
 import 'package:finaltwo/ui/home_page.dart';
 import 'package:finaltwo/ui/home_page2.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,13 +15,21 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
 import 'package:home_widget/home_widget.dart';
 import '../ui/home_page1.dart';
+import '../user_preferences.dart';
 import 'registration_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
+
+int? switchValue;
 
 class ProfilePage extends StatelessWidget{
   final Function(User?)? onSignOut;
   ProfilePage({this.onSignOut});
+
+
+  var snackBar;
+  //var notifyHelper;
 
 
 //   @override
@@ -338,6 +347,59 @@ class ProfilePage extends StatelessWidget{
                   //SystemNavigator.pop();
                 },
               ),
+              SizedBox(height: 25,),
+              Text(
+                  "Reminder notification :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold
+                  )
+              ),
+              SizedBox(height: 7,),
+              Text(
+                  "Turn ON to get reminder notification every hour.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                  )
+              ),
+
+              SizedBox(height: 12,),
+              ToggleSwitch(
+                minWidth: 150.0,
+                cornerRadius: 20.0,
+                activeBgColors: [[Colors.red[800]!], [Colors.green[800]!]],
+                activeFgColor: Colors.white,
+                inactiveBgColor: Colors.grey,
+                inactiveFgColor: Colors.white,
+                initialLabelIndex: switchValue,
+                totalSwitches: 2,
+                labels: ['Off', 'On'],
+                radiusStyle: true,
+                onToggle: (switchValue) async {
+                  print('switched to: $switchValue');
+                  await UserPreferences.setSwitchValue(switchValue!);
+                  if(switchValue == 0)
+                  {
+                    //off
+                    snackBar = SnackBar(
+                      content: Text('Reminder notification is turned OFF !'),
+                    );
+                    await notifyHelper.cancelNotification(1024);
+                  }
+                  else
+                  {
+                    //on
+                    snackBar = SnackBar(
+                      content: Text('Reminder notification is turned ON !'),
+                    );
+                    await notifyHelper.repeatNotification();
+                  }
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
+              ),
+
             ],
           ),
         ),

@@ -1,10 +1,14 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:finaltwo/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:home_widget/home_widget.dart';
 import '../decisions_tree.dart';
+import '../notification_service.dart';
+import '../user_preferences.dart';
 
+var notifyHelper;
 
 void backgroundCallback(Uri? data) async {
   print(data);
@@ -47,7 +51,11 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     HomeWidget.setAppGroupId('YOUR_GROUP_ID');
     HomeWidget.registerBackgroundCallback(backgroundCallback);
+    switchValue = UserPreferences.getSwitchValue() ?? 0;
     _sendAndUpdate();
+    notifyHelper=NotifyHelper();
+    notifyHelper.initializeNotification();
+    notifyHelper.requestIOSPermissions();
   }
 
   @override

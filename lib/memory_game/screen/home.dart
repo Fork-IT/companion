@@ -1,4 +1,3 @@
-
 import 'package:finaltwo/memory_game/data/data.dart';
 import 'package:finaltwo/memory_game/model/title_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,9 +26,9 @@ class _HomeState extends State<Home> {
 
     gridViewTiles = myPairs;
     Future.delayed(const Duration(seconds: 5), () {
-// Here you can write your code
+
       setState(() {
-        print("2 seconds done");
+        print("5 seconds done");
         // Here you can write your code for open new view
         questionPairs = getQuestionPairs();
         gridViewTiles = questionPairs;
@@ -46,7 +45,7 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           title: Text('Test Your Brain !! '),
           centerTitle: true,
-          backgroundColor: Colors.lightBlue[500]!,
+          backgroundColor: Colors.cyan,
           elevation: 0,
 
         ),
@@ -56,10 +55,10 @@ class _HomeState extends State<Home> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Colors.blue[500]!,
-                Colors.blue[900]!,
-                Colors.cyan[900]!,
-               // Colors.blue[900]!,
+                Colors.yellow[800]!,
+                Colors.orange[400]!,
+                Colors.cyan[100]!,
+                Colors.brown[200]!,
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -81,7 +80,7 @@ class _HomeState extends State<Home> {
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   Text(
@@ -89,7 +88,7 @@ class _HomeState extends State<Home> {
                     style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                        color: Colors.purple,
                     ),
                   ),
                 ],

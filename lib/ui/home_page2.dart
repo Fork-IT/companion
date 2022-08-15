@@ -30,13 +30,15 @@ class _HomePage2State extends State<HomePage2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
+        title: Text('Your true buddy is with you !!'),
+        centerTitle: true,
+        elevation: 20,
+        backgroundColor: Colors.cyan,
       ),
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

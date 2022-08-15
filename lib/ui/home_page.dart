@@ -29,13 +29,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          title: Text('Connect with your loved ones'),
           elevation: 0,
-          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          backgroundColor: Colors.cyan,
         ),
         body: Column(
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

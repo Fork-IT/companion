@@ -25,13 +25,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue[500]!,
+        backgroundColor: Colors.cyan,
         elevation: 10,
         title: Text('Connect with your loved ones') ,
 
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20,top: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [

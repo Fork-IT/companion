@@ -26,7 +26,7 @@ class _HomeScreenState extends State<MatchPair> {
       ItemModel(value: 'Eye Glass', name: 'Eye Glass', img: 'assets/images/spcs.png'),
       ItemModel(value: 'Walk Stick', name: 'Walk Stick', img: 'assets/images/walkingstick.png'),
       ItemModel(value: 'Television', name: 'Television', img: 'assets/images/tv.png'),
-      ItemModel(value: 'Teen Patti', name: 'Teen Patti', img: 'assets/images/card.png'),
+      ItemModel(value: 'Cards', name: 'Cards', img: 'assets/images/card.png'),
       ItemModel(value: 'Hand Wash', name: 'Hand Wash', img: 'assets/images/handwash.png'),
     ];
     items2 = List<ItemModel>.from(items);

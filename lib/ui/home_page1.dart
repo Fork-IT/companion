@@ -15,6 +15,7 @@ import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 
 import '../models/task1.dart';
+import '../pages/splash_screen.dart';
 import '../widgets/task_tile1.dart';
 
 
@@ -30,15 +31,15 @@ class HomePage1 extends StatefulWidget {
 class _HomePage1State extends State<HomePage1> {
   final _taskController = Get.put(TaskController());
   DateTime _selectedDate = DateTime.now();
-  var notifyHelper;
+  //var notifyHelper;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    notifyHelper=NotifyHelper();
-    notifyHelper.initializeNotification();
-    notifyHelper.requestIOSPermissions();
+    // notifyHelper=NotifyHelper();
+    // notifyHelper.initializeNotification();
+    // notifyHelper.requestIOSPermissions();
   }
 
 

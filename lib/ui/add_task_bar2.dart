@@ -29,7 +29,8 @@ class _AddTaskPage2State extends State<AddTaskPage2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[500]!,
+        title: Text('Add your location'),
+        backgroundColor: Colors.cyan,
       ),
       body: Container(
         padding: const EdgeInsets.only(left: 20, right: 20,top: 20),
@@ -37,7 +38,6 @@ class _AddTaskPage2State extends State<AddTaskPage2> {
           child: Column(
             children: [
               Text(
-
                 "Add Location",
                 style: TextStyle(
                     fontSize: 31,

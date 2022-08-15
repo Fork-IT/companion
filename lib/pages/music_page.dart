@@ -65,7 +65,7 @@ class _MusicPageState extends State<MusicPage> {
   Future setAudio() async{
     player.setReleaseMode(ReleaseMode.loop);
     final players = AudioCache(prefix: "assets/");
-    final url = await players.load('calm.mp3');
+    final url = await players.load('meditative_rain.mp3');
     //String url = "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3";
     player.setSourceUrl(url.path);
   }
@@ -79,7 +79,7 @@ class _MusicPageState extends State<MusicPage> {
           centerTitle: true,
           backgroundColor: Colors.blue[500]!,
           elevation: 25,
-          title: Text('Music Medicine') ,
+          title: Text('Meditative Rain Sound') ,
         ),
         body: Padding(
           padding: EdgeInsets.all(20),

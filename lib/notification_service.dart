@@ -55,6 +55,31 @@ class NotifyHelper {
     );
   }
 
+  Future<void> repeatNotification() async {
+    var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      'your channel id 5',
+      'your channel name 3',
+      channelDescription: 'your channel description 3',
+      importance: Importance.max,
+      priority: Priority.high,
+      sound: RawResourceAndroidNotificationSound('companion'),
+    );
+    var iOSPlatformChannelSpecifics = new IOSNotificationDetails();
+    var platformChannelSpecifics = NotificationDetails(
+        android: androidPlatformChannelSpecifics,
+        iOS: iOSPlatformChannelSpecifics
+    );
+    await flutterLocalNotificationsPlugin.periodicallyShow(
+      1024,
+      'Companion - Your True Buddy',
+      'Reminder Notification',
+      RepeatInterval.hourly,
+      platformChannelSpecifics,
+      payload: 'Test Payload',
+    );
+  }
+
+
   scheduledNotification(int hour, int minutes, Task task) async {
 
     await flutterLocalNotificationsPlugin.zonedSchedule(
@@ -120,7 +145,7 @@ class NotifyHelper {
       print("Notification Done");
     }
 
-    if(payload=="Task successfully created")
+    if(payload=="Test Payload")
     {
 
     }

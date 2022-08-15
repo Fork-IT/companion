@@ -1,6 +1,9 @@
+import 'package:chess/chess.dart';
+import 'package:finaltwo/chess/chess_home.dart';
 import 'package:finaltwo/match_pair/MatchPair.dart';
 import 'package:finaltwo/memory_game/screen/home.dart';
-import 'package:finaltwo/pages/splash.dart';
+import 'package:finaltwo/pages/home.dart';
+import 'package:finaltwo/quiz_game/screens/welcome/welcome_screen.dart';
 import 'package:finaltwo/tic_tac_toe/tic_tac_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +17,7 @@ class GameDashboard extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue[500]!,
+        backgroundColor: Colors.cyan,
         elevation: 10,
         title: Text('Game Zone') ,
       ),
@@ -81,7 +84,7 @@ class GameDashboard extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=> splashscreen()),
+                          builder: (context)=> WelcomeScreen()),
                     );
                   },
                   child: Container(
@@ -252,7 +255,7 @@ class GameDashboard extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=> MainPage()),
+                          builder: (context)=> ChessHome()),
                     );
                   },
                   child: Container(
