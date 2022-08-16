@@ -26,9 +26,12 @@ class ScoreScreen extends StatelessWidget {
               ),
               OutlinedButton(
                 onPressed: (){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => WelcomeScreen(),
-                  ));
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => WelcomeScreen(),
+                      ),
+                          (route) => false);
                 },
                 child: Text(
                     style: TextStyle(

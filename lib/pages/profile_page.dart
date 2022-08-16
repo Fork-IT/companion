@@ -289,15 +289,15 @@ class ProfilePage extends StatelessWidget{
                 title: Text('Upload Your Data', style: TextStyle(fontSize: _drawerFontSize, color: Theme.of(context).accentColor),
                 ),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()),);
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfo()),);
                 },
               ),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
-                leading: Icon(Icons.info_outline_rounded, size: _drawerIconSize,color: Theme.of(context).accentColor),
-                title: Text('App Guide / Info',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
+                leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
+                title: Text('App Guide',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage()),);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfo()),);
                 },
               ),
               /*Divider(color: Theme.of(context).primaryColor, height: 1,),
@@ -318,7 +318,7 @@ class ProfilePage extends StatelessWidget{
               ),*/
               Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
-                leading: Icon(Icons.logout_rounded, size: _drawerIconSize,color: Theme.of(context).accentColor,),
+                leading: Icon(Icons.logout_outlined, size: _drawerIconSize,color: Theme.of(context).accentColor,),
                 title: Text('Logout',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
                 onTap: () async {
                   print("clicked here");

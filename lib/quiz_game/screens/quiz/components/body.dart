@@ -4,7 +4,6 @@ import 'package:finaltwo/quiz_game/constants.dart';
 import 'package:finaltwo/quiz_game/controllers/question_controller.dart';
 import 'package:finaltwo/quiz_game/models/Questions.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'progress_bar.dart';
 import 'question_card.dart';
 

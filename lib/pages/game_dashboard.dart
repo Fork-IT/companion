@@ -1,11 +1,12 @@
-import 'package:chess/chess.dart';
 import 'package:finaltwo/chess/chess_home.dart';
 import 'package:finaltwo/match_pair/MatchPair.dart';
 import 'package:finaltwo/memory_game/screen/home.dart';
-import 'package:finaltwo/pages/home.dart';
+import 'package:finaltwo/puzzle_slide_game/home_page.dart';
 import 'package:finaltwo/quiz_game/screens/welcome/welcome_screen.dart';
 import 'package:finaltwo/tic_tac_toe/tic_tac_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../puzzle_slide_game/puzzle_getstarted.dart';
 
 
 class GameDashboard extends StatelessWidget {
@@ -96,7 +97,7 @@ class GameDashboard extends StatelessWidget {
                         children:  [
                           SizedBox(
                               height: 150,
-                              child: Image.asset('assets/quiz.png',)
+                              child: Image.asset('assets/images/quizzie.png',)
 
                           ),
                           const Spacer(),
@@ -138,7 +139,7 @@ class GameDashboard extends StatelessWidget {
                         children:  [
                           SizedBox(
                               height: 150,
-                              child: Image.asset('assets/images/memory.png',)
+                              child: Image.asset('assets/images/guess.png',)
 
                           ),
                           const Spacer(),
@@ -212,7 +213,7 @@ class GameDashboard extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=> MainPage()),
+                          builder: (context)=> PuzzleGetStart()),
                     );
                   },
                   child: Container(
@@ -224,14 +225,14 @@ class GameDashboard extends StatelessWidget {
                         children:  [
                           SizedBox(
                               height: 160,
-                              child: Image.asset('assets/images/sl.png',)
+                              child: Image.asset('assets/images/pz.png',)
 
                           ),
                           const Spacer(),
                           const Text(
-                            'Snakes & Ladders',
+                            'Sliding Puzzle',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.blue,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
                             ),

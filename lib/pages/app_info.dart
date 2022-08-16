@@ -1,112 +1,127 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
+class AppInfo extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Companion',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Companion'),
-    );
-  }
+  _AppInfoState createState() => _AppInfoState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class _AppInfoState extends State<AppInfo> {
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+  List<String> images = [
+    "assets/game.png",
+    "assets/todo.png",
+    "assets/location.png",
+    "assets/workout.png",
+    "assets/call.png",
+    "images/music.png"
+  ];
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  List<String> des = [
+    "This section contains a variety of games which will help the user to improve their memory power and to easily recall things with lots of entertainment.",
+    "Used to schedule day-to-day life activities.\n➜ Taking medicine once a week or daily,\n➜  Reminder for meditation,\n➜ Completing different types of tasks,etc",
+    "In this section, the user will enable to acquire directions if an elderly person occasionally forgots how to get home or to another specific place.\n➜ This section will help the user to reach home or any location easily without any difficulties.",
+    "This section's goal is to get you physically ready.\n➜ Surya namaskar is the primary exercise that you will  perform.\n➜ The section gives detailed directions for each of the surya namaskar's 12 steps along with the appropriate picture.\n➜ After every 10 seconds, the image will automatically change, and it will pause for 5 seconds between each step.",
+    "In this section, you can add contacts for your friends, family or etc.\n➜ By doing this you don’t need to find the particular contact.\n ➜ You can instantly connect with your loved ones with only one tap.",
+    "Users can listen to music in this part that will help them unwind and release stress. They will become more mentally stable as a result.\n➜ The music they will hear is called meditative rain sound. This ticking sound is rhythmic and has the advantages of a beautiful lullaby.\n➜ When this sounds enters people's brain,brain relaxes automatically and releases alpha waves, which are extremely similar to the brain waves that occur when a person sleeps.",
 
-  final String title;
+  ];
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+  Widget customcard(String langname, String image, String des){
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: 20.0,
+        horizontal: 20.0,
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      child: InkWell(
+        child: Material(
+          color: Colors.cyan,
+          elevation: 10.0,
+          borderRadius: BorderRadius.circular(25.0),
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                  ),
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(100.0),
+                    child: Container(
+                      // changing from 200 to 150 as to look better
+                      height: 150.0,
+                      width: 150.0,
+                      child: ClipOval(
+                        child: Image(
+                          fit: BoxFit.cover,
+                          image: AssetImage(
+                            image,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    langname,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.white,
+                      fontFamily: "Quando",
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text(
+                    des,
+                    style: TextStyle(
+                        fontSize: 17.0,
+                        color: Colors.white,
+                        fontFamily: "Alike"
+                    ),
+                    maxLines: 14,
+                    textAlign: TextAlign.justify,
+                  ),
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown, DeviceOrientation.portraitUp
+    ]);
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.cyan,
+        elevation: 20,
+        centerTitle: true,
+        title: Text(
+          "APP GUIDE",
+          style: TextStyle(
+            fontFamily: "Quando",
+          ),
+        ),
+      ),
+      body: ListView(
+        children: <Widget>[
+          customcard("Game Zone", images[0], des[0]),
+          customcard("To-Do Tasks", images[1], des[1]),
+          customcard("Get Directions", images[2], des[2]),
+          customcard("Exercise Zone", images[3], des[3]),
+          customcard("Contact Family", images[4], des[4]),
+          customcard("Music Medicine", images[5], des[5]),
+        ],
+      ),
     );
   }
 }

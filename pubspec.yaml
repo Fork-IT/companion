@@ -104,8 +104,6 @@ flutter:
     - assets/icons/
     - assets/
     - images/
-    - assets/logo/
-    - assets/01_Suryanamskar/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
