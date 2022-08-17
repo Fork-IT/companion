@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:finaltwo/exercise_zone/exercise.dart';
+import 'package:finaltwo/exercise_zone/exercise_home.dart';
 import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/music_page.dart';
 import 'package:finaltwo/pages/splash_screen.dart';
@@ -117,7 +119,7 @@ class ProfilePage extends StatelessWidget{
               //7.item
             }
             if (index == 7) {
-              Get.to(Home());
+              Get.to(ExerciseHome());
              //Get.to(HomePage1());
               //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage1()));
               //8.item

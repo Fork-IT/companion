@@ -69,6 +69,7 @@ dependencies:
   home_widget: ^0.1.6
   integration_test: ^0.8.1
   toggle_switch: ^2.0.1
+  youtube_player_flutter: ^8.1.0
 
 dev_dependencies:
   flutter_test:

@@ -10,14 +10,14 @@ const List sample_data = [
   {
     "id": 1,
     "question":
-        "Why should you stand in the corner of a room if you're cold ?",
-    "options": ['Apple', 'Google', 'Facebook', 'Microsoft'],
-    "answer_index": 1,
+        "They come out at night without being called and are lost in the day without being stolen. What are they ?",
+    "options": ['Light', 'Bats', 'Stars', 'Flights'],
+    "answer_index": 2,
   },
   {
     "id": 2,
-    "question": "When google release Flutter.",
-    "options": ['Jun 2017', 'Jun 2017', 'May 2017', 'May 2018'],
+    "question": "Pointing to a photograph, a man said, “I have no brother or sister but that man’s father is my father’s son.” Whose photograph was it?",
+    "options": ['His own', 'His Son', 'His Father', 'His Grandfather'],
     "answer_index": 2,
   },
   {
