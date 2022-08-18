@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                 textAlign: TextAlign.center,
               ),
             ),
+            Divider(color: Colors.black, thickness: 2,),
             SizedBox(height: 12,),
             _showTasks(),
           ],
@@ -71,33 +72,50 @@ class _HomePageState extends State<HomePage> {
   _showTasks() {
       return Expanded(
         child: Obx(() {
-          return ListView.builder(
-              itemCount: _taskController.taskList.length,
+          if(_taskController.taskList.length == 0)
+          {
+            return Container(
+              child: Center(
+                child: Text(
+                    "NO DATA",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                ),
+              ),
+            );
+          }
+          else {
+            return ListView.builder(
+                itemCount: _taskController.taskList.length,
 
-              itemBuilder: (_, index) {
-                Task task = _taskController.taskList[index];
-                return AnimationConfiguration.staggeredList(
-                    position: index,
-                    child: SlideAnimation(
-                      child: FadeInAnimation(
-                        child: Row(
-                          children: [
-                            GestureDetector(
-                              onLongPress: () {
-                                _showBottomSheet(context, task);
-                              },
-                              onTap: () {
-                                FlutterPhoneDirectCaller.callNumber(
-                                    task.number.toString());
-                              },
-                              child: TaskTile(task),
-                            )
-                          ],
+                itemBuilder: (_, index) {
+                  Task task = _taskController.taskList[index];
+                  return AnimationConfiguration.staggeredList(
+                      position: index,
+                      child: SlideAnimation(
+                        child: FadeInAnimation(
+                          child: Row(
+                            children: [
+                              GestureDetector(
+                                onLongPress: () {
+                                  _showBottomSheet(context, task);
+                                },
+                                onTap: () {
+                                  FlutterPhoneDirectCaller.callNumber(
+                                      task.number.toString());
+                                },
+                                child: TaskTile(task),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                    )
-                );
-              });
+                      )
+                  );
+                });
+          }
         }),
       );
   }
