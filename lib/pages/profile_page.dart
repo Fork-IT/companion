@@ -136,7 +136,7 @@ class ProfilePage extends StatelessWidget{
               Center(
                 child: Image.asset(
                 img,
-                height: 75,
+                height: 55,  //height: 75  --> changed due to overflow error of Jay's phone
                 width: 75,
                 ),
               ),
