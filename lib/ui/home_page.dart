@@ -71,8 +71,11 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap: () {
+                            onLongPress: () {
                               _showBottomSheet(context, task);
+                            },
+                            onTap: () {
+                              FlutterPhoneDirectCaller.callNumber(task.number.toString());
                             },
                             child: TaskTile(task),
                           )
@@ -90,7 +93,7 @@ class _HomePageState extends State<HomePage> {
     Get.bottomSheet(
         Container(
           padding: const EdgeInsets.only(top: 4),
-          height: MediaQuery.of(context).size.height*0.32,
+          height: MediaQuery.of(context).size.height*0.15,
           color: Colors.white,
           child: Column(
             children: [
@@ -102,22 +105,6 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey[300],
                 ),
               ),
-              // Spacer(),
-              // task.isCompleted==1
-              // ?Container()
-              //      :
-              _bottomSheetButton(
-                  label: "Call",
-                  onTap: () {
-                    print("call should be made here");
-                    print(task.number);
-                    print(task.number.runtimeType);
-                    FlutterPhoneDirectCaller.callNumber(task.number.toString());
-                    Get.back();
-                  },
-                  clr: primaryClr,
-                  context:context
-              ),
               _bottomSheetButton(
                   label: "Delete Contact",
                   onTap: () {
@@ -125,18 +112,6 @@ class _HomePageState extends State<HomePage> {
                     Get.back();
                   },
                   clr: Colors.red[300]!,
-                  context:context
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              _bottomSheetButton(
-                  label: "Close",
-                  onTap: () {
-                    Get.back();
-                  },
-                  clr: Colors.red[300]!,
-                  isClose: true,
                   context:context
               ),
               SizedBox(
