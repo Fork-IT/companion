@@ -14,16 +14,22 @@ class _AppInfoState extends State<AppInfo> {
     "assets/location.png",
     "assets/workout.png",
     "assets/call.png",
-    "images/music.png"
+    "images/music.png",
+    "assets/id.png",
+    "assets/note.png",
+    "assets/notification.png",
   ];
 
   List<String> des = [
     "This section contains a variety of games which will help the user to improve their memory power and to easily recall things with lots of entertainment.",
     "Used to schedule day-to-day life activities.\n➜ Taking medicine once a week or daily,\n➜  Reminder for meditation,\n➜ Completing different types of tasks,etc",
     "In this section, the user will enable to acquire directions if an elderly person occasionally forgots how to get home or to another specific place.\n➜ This section will help the user to reach home or any location easily without any difficulties.",
-    "This section's goal is to get you physically ready.\n➜ Surya namaskar is the primary exercise that you will  perform.\n➜ The section gives detailed directions for each of the surya namaskar's 12 steps along with the appropriate picture.\n➜ After every 10 seconds, the image will automatically change, and it will pause for 5 seconds between each step.",
+    "This section's goal is to get you physically ready.\n➜ In this section there are several exercise options available like - \n‣ Surya  Namasakar\n‣ Seated Exercises\n‣ Standing Exercises\n‣ breathing exercises.\n➜ By clicking on any of the options user will be redirected to a page where he/she can find multiple video tutorials which include all the instructions related to the exercises and the benefits of each exercises.",
     "In this section, you can add contacts for your friends, family or etc.\n➜ By doing this you don’t need to find the particular contact.\n ➜ You can instantly connect with your loved ones with only one tap.",
     "Users can listen to music in this part that will help them unwind and release stress. They will become more mentally stable as a result.\n➜ The music they will hear is called meditative rain sound. This ticking sound is rhythmic and has the advantages of a beautiful lullaby.\n➜ When this sounds enters people's brain,brain relaxes automatically and releases alpha waves, which are extremely similar to the brain waves that occur when a person sleeps.",
+    "The user needs to enter the image, name, and relationship of a loved one in this part in order to identify them in the future.\n➜ When the user successfully completed the process , one image is shown and when the user taps it, the name and relation of that particular person is displayed.",
+    "This section can assist users in taking specific notes. They can make a note of where they have put their belongings so that if they forget, they can read it from the notes.\n➜ They can also include their thoughts or any daily routine life activities as a reference to someone.",
+    "The user has the ability to enable or disable the remainder notification option as desired.\n➜ They can turn it on to get hourly notifications about the location of their device.",
 
   ];
 
@@ -120,6 +126,9 @@ class _AppInfoState extends State<AppInfo> {
           customcard("Exercise Zone", images[3], des[3]),
           customcard("Contact Family", images[4], des[4]),
           customcard("Music Medicine", images[5], des[5]),
+          customcard("Identify", images[6], des[6]),
+          customcard("Take Notes", images[7], des[7]),
+          customcard("Reminder Notification", images[8], des[8]),
         ],
       ),
     );

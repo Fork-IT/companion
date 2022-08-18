@@ -34,6 +34,45 @@ class ExercisePageScreen extends State<Standing> {
           scrollDirection: Axis.vertical,
           padding: EdgeInsets.all(15),
           children: [
+            Text('⚪ Benefits : ',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.left,),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Text(''),
+
+            Text('➡ Decreases the risk of heart-related diseases.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,),
+            Text('➡ Brings relief in back pain.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text('➡ Reduces the risk of weight gain.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Divider(),
+            Divider(),
+
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -46,13 +85,8 @@ class ExercisePageScreen extends State<Standing> {
                 ),
               ),
             ),
-            Text('\n➡ Decreases the risk of heart-related diseases.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -64,14 +98,8 @@ class ExercisePageScreen extends State<Standing> {
                 ),
               ),
             ),
-            Text('\n➡ Brings relief in back pain.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
-            ),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -82,14 +110,6 @@ class ExercisePageScreen extends State<Standing> {
                   ),
                 ),
               ),
-            ),
-            Text('\n➡ Reduces the risk of weight gain.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),
