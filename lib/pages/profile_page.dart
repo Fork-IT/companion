@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:finaltwo/exercise_zone/exercise.dart';
 import 'package:finaltwo/exercise_zone/exercise_home.dart';
+import 'package:finaltwo/notes/pages/main_page.dart';
 import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/music_page.dart';
 import 'package:finaltwo/pages/splash_screen.dart';
@@ -110,6 +111,7 @@ class ProfilePage extends StatelessWidget{
               //5.item
             }
             if (index == 5) {
+              Get.to(MainPage1());
               // Navigator.push(context, MaterialPageRoute(builder: (context) => Splash()));
               //6.item
             }
@@ -239,7 +241,7 @@ class ProfilePage extends StatelessWidget{
                 profilePage("Contact Family", "assets/call.png", 2),
                 profilePage("Directions", "assets/location.png", 3),
                 profilePage("Daily Tasks", "assets/todo.png", 4),
-                profilePage("Your Document", "assets/doc.png", 5),
+                profilePage("Take Notes", "assets/note.png", 5),
                 profilePage("Music Medicine", "assets/musicc.png", 6),
                 profilePage("Exercise time !!", "assets/yoga.png", 7),
               ],
