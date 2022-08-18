@@ -241,7 +241,7 @@ class ProfilePage extends StatelessWidget{
                 profilePage("Daily Tasks", "assets/todo.png", 4),
                 profilePage("Your Document", "assets/doc.png", 5),
                 profilePage("Music Medicine", "assets/musicc.png", 6),
-                profilePage("Exercise time !!", "assets/workout.png", 7),
+                profilePage("Exercise time !!", "assets/yoga.png", 7),
               ],
             ),
           )

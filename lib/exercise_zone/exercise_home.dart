@@ -1,11 +1,9 @@
-import 'package:finaltwo/chess/chess_home.dart';
-import 'package:finaltwo/match_pair/MatchPair.dart';
-import 'package:finaltwo/memory_game/screen/home.dart';
-import 'package:finaltwo/quiz_game/screens/welcome/welcome_screen.dart';
-import 'package:finaltwo/tic_tac_toe/tic_tac_screen.dart';
+import 'package:finaltwo/exercise_zone/standingexercise.dart';
+import 'package:finaltwo/exercise_zone/suryanamashkar.dart';
 import 'package:flutter/material.dart';
+import 'breathing.dart';
+import 'chairyoga.dart';
 
-import '../puzzle_slide_game/puzzle_getstarted.dart';
 
 
 class ExerciseHome extends StatelessWidget {
@@ -41,10 +39,10 @@ class ExerciseHome extends StatelessWidget {
                 padding:  const EdgeInsets.all(20.0),
                 child: InkWell(
                   onTap: (){
-                    // Navigator.push(context,
-                    //   MaterialPageRoute(
-                    //       builder: (context)=>const MatchPair()),
-                    // );
+                    Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context)=>Surya()),
+                    );
                   },
                   child: Container(
                     height: 200,
@@ -84,7 +82,7 @@ class ExerciseHome extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=> WelcomeScreen()),
+                          builder: (context)=> ChairYoga()),
                     );
                   },
                   child: Container(
@@ -124,7 +122,7 @@ class ExerciseHome extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=> Home()),
+                          builder: (context)=> Standing()),
                     );
                   },
                   child: Container(
@@ -141,7 +139,7 @@ class ExerciseHome extends StatelessWidget {
                           ),
                           const Spacer(),
                           const Text(
-                            'Aerobics',
+                            'Standing Exercises',
                             style: TextStyle(
                                 color: Colors.green,
                                 fontSize: 18,
@@ -167,7 +165,7 @@ class ExerciseHome extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=> MainPage()),
+                          builder: (context)=> Breathing()),
                     );
                   },
                   child: Container(
@@ -179,12 +177,12 @@ class ExerciseHome extends StatelessWidget {
                         children:  [
                           SizedBox(
                               height: 150,
-                              child: Image.asset('assets/images/tic-tac-toe.png',)
+                              child: Image.asset('assets/images/breath.png',)
 
                           ),
                           const Spacer(),
                           const Text(
-                            'Walking',
+                            'Breathing Exercises',
                             style: TextStyle(
                                 color: Colors.brown,
                                 fontSize: 18,
