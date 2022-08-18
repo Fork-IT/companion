@@ -1,4 +1,5 @@
 import 'package:finaltwo/controllers/task_controller.dart';
+import 'package:finaltwo/db/db_helper.dart';
 import 'package:finaltwo/ui/add_task_bar.dart';
 import 'package:finaltwo/ui/theme.dart';
 import 'package:finaltwo/widgets/buttons.dart';
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MyButton(label: "+ Add Contact", onTap: ()async{
                     await Get.to(()=>AddTaskPage());
@@ -50,43 +51,55 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 10,),
-            _showTasks()
+            Container(
+              child: Text(
+                "Tap to call\nLong press to delete",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(height: 12,),
+            _showTasks(),
           ],
         )
     );
   }
 
   _showTasks() {
-    return Expanded(
-      child: Obx((){
-        return ListView.builder(
-            itemCount: _taskController.taskList.length,
+      return Expanded(
+        child: Obx(() {
+          return ListView.builder(
+              itemCount: _taskController.taskList.length,
 
-            itemBuilder: (_, index) {
-              Task task = _taskController.taskList[index];
-              return AnimationConfiguration.staggeredList(
-                  position: index,
-                  child: SlideAnimation(
-                    child: FadeInAnimation(
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onLongPress: () {
-                              _showBottomSheet(context, task);
-                            },
-                            onTap: () {
-                              FlutterPhoneDirectCaller.callNumber(task.number.toString());
-                            },
-                            child: TaskTile(task),
-                          )
-                        ],
+              itemBuilder: (_, index) {
+                Task task = _taskController.taskList[index];
+                return AnimationConfiguration.staggeredList(
+                    position: index,
+                    child: SlideAnimation(
+                      child: FadeInAnimation(
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onLongPress: () {
+                                _showBottomSheet(context, task);
+                              },
+                              onTap: () {
+                                FlutterPhoneDirectCaller.callNumber(
+                                    task.number.toString());
+                              },
+                              child: TaskTile(task),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-              );
-            });
-      }),
-    );
+                    )
+                );
+              });
+        }),
+      );
   }
 
   _showBottomSheet(BuildContext context, Task task) {

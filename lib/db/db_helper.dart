@@ -1,5 +1,4 @@
 import 'package:sqflite/sqflite.dart';
-
 import '../models/task.dart';
 
 class DBHelper {
