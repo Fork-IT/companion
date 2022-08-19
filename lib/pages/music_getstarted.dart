@@ -78,7 +78,7 @@ class _GetStartState extends State<GetStart> {
               },
               child: Container(
                 margin: EdgeInsets.all(32),
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(13), //20  ==> changed to 13 as of overflow error
                 width: double.infinity,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
