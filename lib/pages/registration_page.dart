@@ -54,35 +54,37 @@ class _RegistrationPageState extends State<RegistrationPage>{
                         GestureDetector(
                           child: Stack(
                             children: [
-                              Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  border: Border.all(
-                                      width: 5, color: Colors.white),
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black12,
-                                      blurRadius: 20,
-                                      offset: const Offset(5, 5),
-                                    ),
-                                  ],
-                                ),
-                                child: Icon(
-                                  Icons.person,
-                                  color: Colors.grey.shade300,
-                                  size: 80.0,
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(80, 80, 0, 0),
-                                child: Icon(
-                                  Icons.add_circle,
-                                  color: Colors.grey.shade700,
-                                  size: 25.0,
-                                ),
-                              ),
+                              Image.asset('assets/logo1.png',
+                                height: 170,),
+                              // Container(
+                              //   padding: EdgeInsets.all(10),
+                              //   decoration: BoxDecoration(
+                              //     borderRadius: BorderRadius.circular(100),
+                              //     border: Border.all(
+                              //         width: 5, color: Colors.white),
+                              //     color: Colors.white,
+                              //     boxShadow: [
+                              //       BoxShadow(
+                              //         color: Colors.black12,
+                              //         blurRadius: 20,
+                              //         offset: const Offset(5, 5),
+                              //       ),
+                              //     ],
+                              //   ),
+                              //   child: Icon(
+                              //     Icons.person,
+                              //     color: Colors.grey.shade300,
+                              //     size: 80.0,
+                              //   ),
+                              // ),
+                              // Container(
+                              //   padding: EdgeInsets.fromLTRB(80, 80, 0, 0),
+                              //   child: Icon(
+                              //     Icons.add_circle,
+                              //     color: Colors.grey.shade700,
+                              //     size: 25.0,
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -143,7 +145,7 @@ class _RegistrationPageState extends State<RegistrationPage>{
                               if (val!.isEmpty) {
                                 return "Please enter your mobile number";
                               }
-                              if(!RegExp(r"^(\d+)*$").hasMatch(val)){
+                              if(val.length != 10){  //!RegExp(r"^(\d+)*$").hasMatch(val
                                 return "Enter a valid phone number";
                               }
                               return null;
@@ -172,42 +174,42 @@ class _RegistrationPageState extends State<RegistrationPage>{
                           decoration: ThemeHelper().inputBoxDecorationShaddow(),
                         ),
                         SizedBox(height: 15.0),
-                        FormField<bool>(
-                          builder: (state) {
-                            return Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Checkbox(
-                                        value: checkboxValue,
-                                        onChanged: (value) {
-                                          setState(() {
-                                            checkboxValue = value!;
-                                            state.didChange(value);
-                                          });
-                                        }),
-                                    Text("I accept all terms and conditions.", style: TextStyle(color: Colors.grey),),
-                                  ],
-                                ),
-                                Container(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    state.errorText ?? '',
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(color: Theme.of(context).errorColor,fontSize: 12,),
-                                  ),
-                                )
-                              ],
-                            );
-                          },
-                          validator: (value) {
-                            if (!checkboxValue) {
-                              return 'You need to accept terms and conditions';
-                            } else {
-                              return null;
-                            }
-                          },
-                        ),
+                        // FormField<bool>(
+                        //   builder: (state) {
+                        //     return Column(
+                        //       children: <Widget>[
+                        //         Row(
+                        //           children: <Widget>[
+                        //             Checkbox(
+                        //                 value: checkboxValue,
+                        //                 onChanged: (value) {
+                        //                   setState(() {
+                        //                     checkboxValue = value!;
+                        //                     state.didChange(value);
+                        //                   });
+                        //                 }),
+                        //             Text("I accept all terms and conditions.", style: TextStyle(color: Colors.grey),),
+                        //           ],
+                        //         ),
+                        //         Container(
+                        //           alignment: Alignment.centerLeft,
+                        //           child: Text(
+                        //             state.errorText ?? '',
+                        //             textAlign: TextAlign.left,
+                        //             style: TextStyle(color: Theme.of(context).errorColor,fontSize: 12,),
+                        //           ),
+                        //         )
+                        //       ],
+                        //     );
+                        //   },
+                        //   validator: (value) {
+                        //     if (!checkboxValue) {
+                        //       return 'You need to accept terms and conditions';
+                        //     } else {
+                        //       return null;
+                        //     }
+                        //   },
+                        // ),
                         SizedBox(height: 20.0),
                         Container(
                           decoration: ThemeHelper().buttonBoxDecoration(context),
