@@ -29,7 +29,7 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add image of your loved once'),
-        elevation: 0,
+        elevation: 20,
         centerTitle: true,
         backgroundColor: Colors.cyan,
       ),
@@ -47,6 +47,9 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
                 )
               ],
             ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 20, left: 20),
           ),
           const SizedBox(height: 10,),
           const Text(

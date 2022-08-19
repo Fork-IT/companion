@@ -231,7 +231,7 @@ class ProfilePage extends StatelessWidget{
               crossAxisCount: 2,
               padding: const EdgeInsets.all(2),
               children: [
-                profilePage("Identify", "assets/identify.png", 0),
+                profilePage("Identify Relation", "assets/identify.png", 0),
                 profilePage("Game Zone", "assets/game.png", 1),
                 profilePage("Contact Family", "assets/call.png", 2),
                 profilePage("Directions", "assets/location.png", 3),
