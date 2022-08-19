@@ -25,7 +25,7 @@ class _HomePage2State extends State<HomePage2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your true buddy is with you !!'),
+        title: Text('Get directions'),
         centerTitle: true,
         elevation: 20,
         backgroundColor: Colors.cyan,
@@ -35,7 +35,7 @@ class _HomePage2State extends State<HomePage2> {
           Container(
             margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
                     child: Text(
@@ -65,7 +65,17 @@ class _HomePage2State extends State<HomePage2> {
           Container(
             margin: const EdgeInsets.only(top: 20, left: 20),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
+          const Text(
+            "Tap to get directions\nLong press to delete",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const Divider(color: Colors.black, thickness: 2,),
+          const SizedBox(height: 10,),
           _showTasks()
         ],
       ),
@@ -75,29 +85,51 @@ class _HomePage2State extends State<HomePage2> {
   _showTasks() {
     return Expanded(
       child: Obx((){
-        return ListView.builder(
-            itemCount: _taskController.taskList.length,
+        if(_taskController.taskList.isEmpty)
+        {
+          return const Center(
+            child: Text(
+              "NO DATA",
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+          );
+        }
+        else {
+          return ListView.builder(
+              itemCount: _taskController.taskList.length,
 
-            itemBuilder: (_, index) {
-              Task task = _taskController.taskList[index];
-                  return AnimationConfiguration.staggeredList(
-                      position: index,
-                      child: SlideAnimation(
-                        child: FadeInAnimation(
-                          child: Row(
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  _showBottomSheet(context, task);
-                                },
-                                child: TaskTile2(task),
-                              )
-                            ],
-                          ),
+              itemBuilder: (_, index) {
+                Task task = _taskController.taskList[index];
+                return AnimationConfiguration.staggeredList(
+                    position: index,
+                    child: SlideAnimation(
+                      child: FadeInAnimation(
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onLongPress: () {
+                                _showBottomSheet(context, task);
+                              },
+                              onTap: () {
+                                var title = task.title.toString();
+                                var hmlat = task.lat!.toDouble();
+                                var hmlan = task.lan!.toDouble();
+                                HomeDirection().openMapsSheet(
+                                    context, title, hmlat, hmlan);
+                              },
+                              child: TaskTile2(task),
+                            )
+                          ],
                         ),
-                      )
-                  );
-        });
+                      ),
+                    )
+                );
+              });
+        }
       }),
     );
   }
@@ -106,7 +138,7 @@ class _HomePage2State extends State<HomePage2> {
     Get.bottomSheet(
       Container(
         padding: const EdgeInsets.only(top: 4),
-        height: MediaQuery.of(context).size.height*0.32,
+        height: MediaQuery.of(context).size.height*0.15,
         color: Colors.white,
         child: Column(
           children: [
@@ -120,36 +152,12 @@ class _HomePage2State extends State<HomePage2> {
             ),
             Spacer(),
             _bottomSheetButton(
-                label: "Show Direction",
-                onTap: () async {
-                  var title = task.title.toString();
-                  var hmlat = task.lat!.toDouble();
-                  var hmlan = task.lan!.toDouble();
-                  HomeDirection().openMapsSheet(context,title,hmlat,hmlan);
-                  Get.back();
-                },
-                clr: primaryClr,
-                context:context
-            ),
-            _bottomSheetButton(
                 label: "Delete Location",
                 onTap: () async {
                   _taskController.delete(task);
                   Get.back();
                 },
                 clr: Colors.red[500]!,
-                context:context
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            _bottomSheetButton(
-                label: "Close",
-                onTap: () {
-                  Get.back();
-                },
-                clr: Colors.red[300]!,
-                isClose: true,
                 context:context
             ),
             SizedBox(

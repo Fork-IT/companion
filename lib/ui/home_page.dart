@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Connect with your loved ones'),
-          elevation: 0,
+          elevation: 20,
           centerTitle: true,
           backgroundColor: Colors.cyan,
         ),
@@ -48,6 +48,9 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 20, left: 20),
             ),
             SizedBox(height: 10,),
             Container(

@@ -29,14 +29,14 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add image of your loved once'),
-        elevation: 0,
+        elevation: 20,
         centerTitle: true,
         backgroundColor: Colors.cyan,
       ),
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -47,6 +47,9 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
                 )
               ],
             ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 20, left: 20),
           ),
           const SizedBox(height: 10,),
           const Text(
