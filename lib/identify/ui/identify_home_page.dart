@@ -36,7 +36,7 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

@@ -1,25 +1,20 @@
 import 'dart:math';
-import 'package:finaltwo/exercise_zone/exercise.dart';
 import 'package:finaltwo/exercise_zone/exercise_home.dart';
 import 'package:finaltwo/notes/pages/main_page.dart';
 import 'package:finaltwo/pages/music_getstarted.dart';
-import 'package:finaltwo/pages/music_page.dart';
 import 'package:finaltwo/pages/splash_screen.dart';
 import 'package:finaltwo/ui/home_page.dart';
 import 'package:finaltwo/ui/home_page2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:finaltwo/Screens/Home.dart';
 import 'package:finaltwo/pages/app_info.dart';
 import 'package:finaltwo/pages/game_dashboard.dart';
 import 'package:finaltwo/pages/login_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
-import 'package:home_widget/home_widget.dart';
 import '../identify/ui/identify_home_page.dart';
 import '../ui/home_page1.dart';
 import '../user_preferences.dart';
-import 'registration_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
