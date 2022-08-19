@@ -7,10 +7,9 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'db/db_helper.dart';
 import 'db/db_helper1.dart';
+import 'identify/db/identify_db_helper.dart';
 import 'pages/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-
-//sample comment
 
 void main() async{
   // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -21,6 +20,7 @@ void main() async{
   await DBHelper.initDb();
   await DBHelper1.initDb();
   await DBHelper2.initDb();
+  await IdentifyDBHelper.initDb();
   await UserPreferences.init();
   runApp(LoginUiApp());
 }

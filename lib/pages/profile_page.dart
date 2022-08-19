@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:finaltwo/exercise_zone/exercise.dart';
 import 'package:finaltwo/exercise_zone/exercise_home.dart';
 import 'package:finaltwo/notes/pages/main_page.dart';
@@ -17,6 +16,7 @@ import 'package:finaltwo/pages/login_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
 import 'package:home_widget/home_widget.dart';
+import '../identify/ui/identify_home_page.dart';
 import '../ui/home_page1.dart';
 import '../user_preferences.dart';
 import 'registration_page.dart';
@@ -88,7 +88,7 @@ class ProfilePage extends StatelessWidget{
           onTap: () {
             if (index == 0) {
               // Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage()));
-              Get.to(RegistrationPage());
+              Get.to(IdentifyHomePage());
               //1.item
             }
             if (index == 1) {
