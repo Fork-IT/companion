@@ -34,6 +34,43 @@ class ExercisePageScreen extends State<Surya> {
           scrollDirection: Axis.vertical,
           padding: EdgeInsets.all(15),
           children: [
+            Text('⚪ Benefits : ',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.left,),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Text(''),
+            Text('➡ It improves the blood circulation of all the important organs of the body.\n',
+            style: TextStyle(
+              color: Colors.blue.shade900,
+              fontSize: 19,
+              fontFamily: "Merriweather"
+            ),
+            textAlign: TextAlign.center,),
+            Text('➡ Improves the functioning of the heart and lungs.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text('➡ Strengthens the muscles of the arms and waist.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -46,13 +83,8 @@ class ExercisePageScreen extends State<Surya> {
                 ),
               ),
             ),
-            Text('\n➡ It improves the blood circulation of all the important organs of the body.\n',
-            style: TextStyle(
-              color: Colors.blue.shade900,
-              fontSize: 19,
-              fontFamily: "Merriweather"
-            ),
-            textAlign: TextAlign.center,),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -64,14 +96,8 @@ class ExercisePageScreen extends State<Surya> {
                 ),
               ),
             ),
-            Text('\n➡ Improves the functioning of the heart and lungs.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
-            ),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -82,14 +108,6 @@ class ExercisePageScreen extends State<Surya> {
                   ),
                 ),
               ),
-            ),
-            Text('\n➡ Strengthens the muscles of the arms and waist.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),

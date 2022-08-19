@@ -1,13 +1,9 @@
 import 'package:finaltwo/controllers/task_controller2.dart';
 import 'package:finaltwo/ui/theme2.dart';
-import 'package:finaltwo/widgets/buttons2.dart';
 import 'package:finaltwo/widgets/input_field2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/physics.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import '../models/task2.dart';
-// import './get_direction.dart';
 import './current_location.dart';
 
 String? pointName;

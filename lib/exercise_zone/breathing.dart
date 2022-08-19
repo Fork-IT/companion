@@ -35,6 +35,43 @@ class ExercisePageScreen extends State<Breathing> {
           scrollDirection: Axis.vertical,
           padding: EdgeInsets.all(15),
           children: [
+            Text('⚪ Benefits : ',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.left,),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Text(''),
+            Text('➡ Improving muscle function during exercises and preventing strain.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,),
+            Text('➡ Helping you relax | Reducing blood pressure\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text('➡ Making it easier for your body to release gas waste from your lungs.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -47,13 +84,8 @@ class ExercisePageScreen extends State<Breathing> {
                 ),
               ),
             ),
-            Text('\n➡ Improving muscle function during exercises and preventing strain.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -65,14 +97,8 @@ class ExercisePageScreen extends State<Breathing> {
                 ),
               ),
             ),
-            Text('\n➡ Helping you relax | Reducing blood pressure\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
-            ),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -83,14 +109,6 @@ class ExercisePageScreen extends State<Breathing> {
                   ),
                 ),
               ),
-            ),
-            Text('\n➡ Making it easier for your body to release gas waste from your lungs.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),

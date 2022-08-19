@@ -2,15 +2,10 @@ import 'package:finaltwo/controllers/task_controller2.dart';
 import 'package:finaltwo/ui/add_task_bar2.dart';
 import 'package:finaltwo/ui/current_location.dart';
 import 'package:finaltwo/ui/theme2.dart';
-import 'package:finaltwo/widgets/buttons2.dart';
-import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 import './get_location.dart';
-
 import '../models/task2.dart';
 import '../widgets/task_tile2.dart';
 import 'add_task_bar2.dart';

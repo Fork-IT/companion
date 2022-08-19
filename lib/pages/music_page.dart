@@ -77,7 +77,7 @@ class _MusicPageState extends State<MusicPage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.blue[500]!,
+          backgroundColor: Colors.cyan,
           elevation: 25,
           title: Text('Meditative Rain Sound') ,
         ),

@@ -54,6 +54,7 @@ class _AddNotePageState extends State<AddNotePage> {
       appBar: AppBar(
         title: const Text('Create Note'),
         backgroundColor: Colors.cyan,
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(

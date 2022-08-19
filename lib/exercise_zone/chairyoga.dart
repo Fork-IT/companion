@@ -34,6 +34,44 @@ class ExercisePageScreen extends State<ChairYoga> {
           scrollDirection: Axis.vertical,
           padding: EdgeInsets.all(15),
           children: [
+            Text('⚪ Benefits : ',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.left,),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Text(''),
+            Text('➡ Improve Your Posture.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,),
+            Text('➡ Strengthen Your Shoulders.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text('➡ Increase Your Upper Body Flexibility.\n',
+              style: TextStyle(
+                  color: Colors.blue.shade900,
+                  fontSize: 19,
+                  fontFamily: "Merriweather"
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Divider(thickness: 2,
+              color: Colors.black,),
+            Divider(),
+            Divider(),
+
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -46,13 +84,8 @@ class ExercisePageScreen extends State<ChairYoga> {
                 ),
               ),
             ),
-            Text('\n➡ Improve Your Posture.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -64,14 +97,8 @@ class ExercisePageScreen extends State<ChairYoga> {
                 ),
               ),
             ),
-            Text('\n➡ Strengthen Your Shoulders.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
-            ),
+            Divider(),
+            Divider(),
             Card(
               child: YoutubePlayer(
                 controller:YoutubePlayerController(
@@ -82,14 +109,6 @@ class ExercisePageScreen extends State<ChairYoga> {
                   ),
                 ),
               ),
-            ),
-            Text('\n➡ Increase Your Upper Body Flexibility.\n',
-              style: TextStyle(
-                  color: Colors.blue.shade900,
-                  fontSize: 19,
-                  fontFamily: "Merriweather"
-              ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),

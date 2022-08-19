@@ -4,7 +4,6 @@ import 'package:finaltwo/widgets/buttons.dart';
 import 'package:finaltwo/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import '../models/task.dart';
 
 class AddTaskPage extends StatefulWidget {

@@ -262,40 +262,30 @@ class ProfilePage extends StatelessWidget{
                   ]
               )
           ) ,
+
           child: ListView(
             children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    stops: [0.0, 1.0],
-                    colors: [ Theme.of(context).primaryColor,Theme.of(context).accentColor,],
-                  ),
-                ),
-                child: Container(
-                  alignment: Alignment.bottomLeft,
-                  child: Text("Companion",
-                    style: TextStyle(fontSize: 25,color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              /*ListTile(
-                leading: Icon(Icons.screen_lock_landscape_rounded, size: _drawerIconSize, color: Theme.of(context).accentColor,),
-                title: Text('Reboot', style: TextStyle(fontSize: 17, color: Theme.of(context).accentColor),),
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SplashScreen(title: "Splash Screen")));
-                },
-              ),*/
-              ListTile(
-                leading: Icon(Icons.file_copy,size: _drawerIconSize,color: Theme.of(context).accentColor),
-                title: Text('Upload Your Data', style: TextStyle(fontSize: _drawerFontSize, color: Theme.of(context).accentColor),
-                ),
-                onTap: () {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfo()),);
-                },
-              ),
+              Text(''),
+              Image.asset('assets/logo1.png',
+              height: 180,),
+              // DrawerHeader(
+              //   // decoration: BoxDecoration(
+              //   //   color: Theme.of(context).primaryColor,
+              //   //   gradient: LinearGradient(
+              //   //     begin: Alignment.topLeft,
+              //   //     end: Alignment.bottomRight,
+              //   //     stops: [0.0, 1.0],
+              //   //     colors: [ Theme.of(context).primaryColor,Theme.of(context).accentColor,],
+              //   //   ),
+              //   // ),
+              //   child: Container(
+              //     alignment: Alignment.bottomLeft,
+              //     child: Text("Companion",
+              //       style: TextStyle(fontSize: 25,color: Colors.white, fontWeight: FontWeight.bold),
+              //     ),
+              //   ),
+              // ),
+              Text(''),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
                 leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
@@ -304,22 +294,6 @@ class ProfilePage extends StatelessWidget{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfo()),);
                 },
               ),
-              /*Divider(color: Theme.of(context).primaryColor, height: 1,),
-              ListTile(
-                leading: Icon(Icons.password_rounded, size: _drawerIconSize,color: Theme.of(context).accentColor,),
-                title: Text('Forgot Password ?',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
-                onTap: () {
-                  Navigator.push( context, MaterialPageRoute(builder: (context) => ForgotPasswordPage()),);
-                },
-              ),*/
-              /*Divider(color: Theme.of(context).primaryColor, height: 1,),
-              ListTile(
-                leading: Icon(Icons.verified_user_sharp, size: _drawerIconSize,color: Theme.of(context).accentColor,),
-                title: Text('Verification',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
-                onTap: () {
-                  Navigator.push( context, MaterialPageRoute(builder: (context) => ForgotPasswordVerificationPage()), );
-                },
-              ),*/
               Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
                 leading: Icon(Icons.logout_outlined, size: _drawerIconSize,color: Theme.of(context).accentColor,),
