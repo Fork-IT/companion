@@ -1,4 +1,3 @@
-import 'package:finaltwo/pages/music_page.dart';
 import 'package:finaltwo/puzzle_slide_game/home_page.dart';
 import 'package:flutter/material.dart';
 
