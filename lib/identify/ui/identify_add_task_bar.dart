@@ -38,7 +38,7 @@ class _IdentifyAddTaskPageState extends State<IdentifyAddTaskPage> {
                 style: headingStyle,
               ),
               IdentifyMyInputField(title: "Name of person", hint: "Enter the name of person", controller: _nameController,),
-              IdentifyMyInputField(title: "Relation with person", hint: "Enter the relation person", controller: _relationController,),
+              IdentifyMyInputField(title: "Relation with person", hint: "Enter the relationship", controller: _relationController,),
               const SizedBox(height: 18,),
               ElevatedButton(
                   onPressed: () async{
