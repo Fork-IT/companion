@@ -5,6 +5,7 @@ import 'package:finaltwo/quiz_game/screens/welcome/welcome_screen.dart';
 import 'package:finaltwo/tic_tac_toe/tic_tac_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../match_pair/choice_match_pair.dart';
 import '../puzzle_slide_game/puzzle_getstarted.dart';
 
 
@@ -43,7 +44,7 @@ class GameDashboard extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=>const MatchPair()),
+                          builder: (context)=>const ChoiceMatchPair()),
                     );
                   },
                   child: Container(
