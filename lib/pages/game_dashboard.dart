@@ -1,4 +1,3 @@
-import 'package:finaltwo/chess/chess_home.dart';
 import 'package:finaltwo/match_pair/MatchPair.dart';
 import 'package:finaltwo/memory_game/screen/home.dart';
 import 'package:finaltwo/puzzle_slide_game/home_page.dart';
@@ -233,49 +232,6 @@ class GameDashboard extends StatelessWidget {
                             'Sliding Puzzle',
                             style: TextStyle(
                                 color: Colors.blue,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
-                            ),
-
-                          )
-                        ],
-                      ),
-                    ),
-                    margin: const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Colors.white70,
-                        borderRadius: BorderRadius.circular(15)
-
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: InkWell(
-                  onTap: (){
-                    Navigator.push(context,
-                      MaterialPageRoute(
-                          builder: (context)=> ChessHome()),
-                    );
-                  },
-                  child: Container(
-                    height: 200,
-                    width: double.infinity,
-                    child: Padding(
-                      padding:  const EdgeInsets.all(8.0),
-                      child: Column(
-                        children:  [
-                          SizedBox(
-                              height: 160,
-                              child: Image.asset('assets/images/chess.png',)
-
-                          ),
-                          const Spacer(),
-                          const Text(
-                            'Chess Titans',
-                            style: TextStyle(
-                                color: Colors.black,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
                             ),

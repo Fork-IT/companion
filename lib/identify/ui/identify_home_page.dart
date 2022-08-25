@@ -7,6 +7,7 @@ import '../widgets/identify_buttons.dart';
 import '../widgets/identify_task_tile.dart';
 import 'identify_add_task_bar.dart';
 import 'identify_theme.dart';
+import 'package:open_file/open_file.dart';
 
 class IdentifyHomePage extends StatefulWidget {
   const IdentifyHomePage({Key? key}) : super(key : key);
@@ -116,6 +117,13 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
                                               Navigator.of(ctx).pop();
                                             },
                                             child: const Text("Ok"),
+                                          ),
+                                          TextButton(
+                                            onPressed: () {
+                                              OpenFile.open(task.path);
+                                              print(task.path);
+                                            },
+                                            child: const Text("Play audio"),
                                           ),
                                         ],
                                       ),

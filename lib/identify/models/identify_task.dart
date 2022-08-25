@@ -3,12 +3,14 @@ class IdentifyTask {
   String? name;
   String? relation;
   String? photo;
+  String? path;
 
   IdentifyTask({
     this.id,
     this.name,
     this.relation,
     this.photo,
+    this.path,
 });
 
   IdentifyTask.fromJson(Map<String, dynamic> json) {
@@ -16,6 +18,7 @@ class IdentifyTask {
     name = json['name'];
     relation = json['relation'];
     photo = json['photo'];
+    path = json['path'];
   }
 
   Map<String, dynamic> toJson() {
@@ -24,6 +27,7 @@ class IdentifyTask {
     data['name'] = this.name;
     data['relation'] = this.relation;
     data['photo'] = this.photo;
+    data['path'] = this.path;
     return data;
   }
 }

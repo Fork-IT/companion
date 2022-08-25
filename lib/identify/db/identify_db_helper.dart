@@ -4,14 +4,14 @@ import '../models/identify_task.dart';
 class IdentifyDBHelper {
   static Database? _db;
   static final int _version = 1;
-  static final String _tableName = "imagedatafour";
+  static final String _tableName = "imagedataseven";
 
   static Future<void> initDb() async {
     if(_db != null) {
       return;
     }
     try {
-      String _path = await getDatabasesPath() + 'imagedatafour.db';
+      String _path = await getDatabasesPath() + 'imagedataseven.db';
       _db = await openDatabase(
         _path,
         version: _version,
@@ -20,7 +20,7 @@ class IdentifyDBHelper {
           return db.execute(
             "CREATE TABLE $_tableName("
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                "name STRING, relation STRING, photo STRING)",
+                "name STRING, relation STRING, photo STRING, path STRING)",
           );
         },
       );

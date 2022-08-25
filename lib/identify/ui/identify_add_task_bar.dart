@@ -8,6 +8,7 @@ import '../models/identify_task.dart';
 import '../widgets/identify_buttons.dart';
 import '../widgets/identify_input_field.dart';
 import 'identify_theme.dart';
+import 'package:file_picker/file_picker.dart';
 
 class IdentifyAddTaskPage extends StatefulWidget {
   const IdentifyAddTaskPage({Key? key}) : super(key: key);
@@ -23,6 +24,8 @@ class _IdentifyAddTaskPageState extends State<IdentifyAddTaskPage> {
   bool flag = false;
   //PlatformFile? file;
   String? imgString;
+  bool a_flag = false;
+  PlatformFile? file;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +59,21 @@ class _IdentifyAddTaskPageState extends State<IdentifyAddTaskPage> {
                     "Choose Image"
                   )
               ),
+              ElevatedButton(
+                  onPressed: () async{
+                    a_flag = true;
+                    final result = await FilePicker.platform.pickFiles();
+                    if(result == false)
+                      {
+                        a_flag = false;
+                        return;
+                      }
+                    file = result!.files.first;
+                  },
+                  child: const Text(
+                      "Choose Audio"
+                  )
+              ),
               const SizedBox(height: 25,),
               IdentifyMyButton(label: "Add", onTap: ()=>_validateDate()),
             ],
@@ -66,11 +84,11 @@ class _IdentifyAddTaskPageState extends State<IdentifyAddTaskPage> {
   }
 
   _validateDate(){
-    if(_nameController.text.isNotEmpty && _relationController.text.isNotEmpty && flag==true) {
+    if(_nameController.text.isNotEmpty && _relationController.text.isNotEmpty && flag==true && a_flag==true) {
       _addTaskToDb();
       Get.back();
     }
-    else if(_nameController.text.isEmpty || _relationController.text.isEmpty || flag==false){
+    else if(_nameController.text.isEmpty || _relationController.text.isEmpty || flag==false || a_flag==false){
       Get.snackbar("Required", "All fields are required !",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.white,
@@ -88,6 +106,7 @@ class _IdentifyAddTaskPageState extends State<IdentifyAddTaskPage> {
           name:_nameController.text,
           relation: _relationController.text,
           photo: imgString,
+          path: file!.path,
         )
     );
     if (kDebugMode) {
