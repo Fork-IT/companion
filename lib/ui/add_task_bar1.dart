@@ -15,9 +15,11 @@ class AddTaskPage extends StatefulWidget {
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
+  var toDoData;
   final TaskController _taskController = Get.put(TaskController());
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _noteController = TextEditingController();
+  final TextEditingController _msgBox = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   String _endTime = "9:30 PM";
   String _startTime = DateFormat("hh:mm a").format(DateTime.now()).toString();
@@ -164,9 +166,40 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       )
                     ],
                   ),
-                  MyButton(label: "Create Task", onTap: ()=>_validateDate()),
+                  // MyButton(label: "Create Task", onTap: ()=>_validateDate()),
                 ],
-              )
+              ),
+              SizedBox(height: 10,),
+              Text(
+                "OR",
+                style: TextStyle(
+                  fontSize: 20
+                ),
+              ),
+              TextField(
+                controller: _msgBox,
+                decoration: InputDecoration(
+                  hintText: "Paste comma separated message here",
+                  hintStyle: subTitleStyle,
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                          color: context.theme.backgroundColor,
+                          width: 0
+                      )
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                          color: context.theme.backgroundColor,
+                          width: 0
+                      )
+                  ),
+                ),
+              ),
+              MyButton(label: "Create Task", onTap: () async{
+                toDoData = _msgBox.text.split(',').toList();
+                _validateDate();
+                Get.back();
+              }),
             ],
           ),
         )
@@ -177,18 +210,25 @@ class _AddTaskPageState extends State<AddTaskPage> {
   _validateDate(){
     if(_titleController.text.isNotEmpty && _noteController.text.isNotEmpty) {
       _addTaskToDb();
-      Get.back();
+      // Get.back();
     }
     else if(_titleController.text.isEmpty || _noteController.text.isEmpty){
-      Get.snackbar("Required", "All fields are required !",
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.white,
-        colorText: pinkClr,
-        icon: Icon(Icons.warning_amber_rounded,
-        color: Colors.red,
-        ),
-      );
+      _addTasktoDb2();
     }
+  }
+
+  _addTasktoDb2() async{
+    int value = await _taskController.addTask(
+        task: Task(
+          note:toDoData[1],
+          title:toDoData[0],
+          date: toDoData[2],
+          startTime: toDoData[3],
+          repeat: toDoData[4],
+          color: 1,
+          isCompleted: 0,
+        )
+    );
   }
 
   _addTaskToDb() async {

@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
     reStart();
   }
   void reStart() {
-
+    points = 0;
     myPairs = getPairs();
     myPairs.shuffle();
 
@@ -175,6 +175,15 @@ class _TileState extends State<Tile> {
             /// testing if the selected tiles are same
             if (selectedTile == myPairs[widget.tileIndex!].getImageAssetPath()) {
               print("add point");
+              var snackBar = SnackBar(
+                behavior: SnackBarBehavior.floating,
+                margin: EdgeInsets.only(bottom: 600.0),
+                content: Text(
+                    'Great!',
+                        textAlign: TextAlign.center,
+                ),
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
               points = points + 100;
               print(selectedTile + " thishis" + widget.imagePathUrl!);
 
@@ -193,6 +202,13 @@ class _TileState extends State<Tile> {
                 selectedTile = "";
               });
             } else {
+              points = points - 50;
+              var snackBar = SnackBar(
+                behavior: SnackBarBehavior.floating,
+                margin: EdgeInsets.only(bottom: 600.0),
+                content: Text('Wrong! Try again'),
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
               print(selectedTile +
                   " thishis " +
                   myPairs[widget.tileIndex!].getImageAssetPath()!);

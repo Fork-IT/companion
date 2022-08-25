@@ -131,20 +131,36 @@ class _HomePage1State extends State<HomePage1> {
   _showTasks() {
     return Expanded(
       child: Obx((){
-        return ListView.builder(
-            itemCount: _taskController.taskList.length,
+        if(_taskController.taskList.length == 0)
+        {
+          return Container(
+            child: Center(
+              child: Text(
+                "NO DATA",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          );
+        }
+        else {
+          return ListView.builder(
+              itemCount: _taskController.taskList.length,
 
-            itemBuilder: (_, index) {
-              Task task = _taskController.taskList[index];
-              if(task.repeat=='Daily')
-                {
-                  DateTime date = DateFormat.jm().parse(task.startTime.toString());
+              itemBuilder: (_, index) {
+                Task task = _taskController.taskList[index];
+                if (task.repeat == 'Daily') {
+                  DateTime date = DateFormat.jm().parse(
+                      task.startTime.toString());
                   var myTime = DateFormat("HH:mm").format(date);
                   print(myTime);
                   notifyHelper.scheduledNotification(
-                    int.parse(myTime.toString().split(":")[0]),
-                    int.parse(myTime.toString().split(":")[1]),
-                    task
+                      int.parse(myTime.toString().split(":")[0]),
+                      int.parse(myTime.toString().split(":")[1]),
+                      task
                   );
                   return AnimationConfiguration.staggeredList(
                       position: index,
@@ -164,37 +180,39 @@ class _HomePage1State extends State<HomePage1> {
                       )
                   );
                 }
-              if(task.date==DateFormat.yMd().format(_selectedDate)) {
-                DateTime date = DateFormat.jm().parse(task.startTime.toString());
-                var myTime = DateFormat("HH:mm").format(date);
-                notifyHelper.scheduledNotification(
-                    int.parse(myTime.toString().split(":")[0]),
-                    int.parse(myTime.toString().split(":")[1]),
-                    task
-                );
-                print("this is the other if block");
-                return AnimationConfiguration.staggeredList(
-                    position: index,
-                    child: SlideAnimation(
-                      child: FadeInAnimation(
-                        child: Row(
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                _showBottomSheet(context, task);
-                              },
-                              child: TaskTile(task),
-                            )
-                          ],
+                if (task.date == DateFormat.yMd().format(_selectedDate)) {
+                  DateTime date = DateFormat.jm().parse(
+                      task.startTime.toString());
+                  var myTime = DateFormat("HH:mm").format(date);
+                  notifyHelper.scheduledNotification(
+                      int.parse(myTime.toString().split(":")[0]),
+                      int.parse(myTime.toString().split(":")[1]),
+                      task
+                  );
+                  print("this is the other if block");
+                  return AnimationConfiguration.staggeredList(
+                      position: index,
+                      child: SlideAnimation(
+                        child: FadeInAnimation(
+                          child: Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  _showBottomSheet(context, task);
+                                },
+                                child: TaskTile(task),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                    )
-                );
-              }else {
-                print("this is the else block");
-                return Container();
-              }
-        });
+                      )
+                  );
+                } else {
+                  print("this is the else block");
+                  return Container();
+                }
+              });
+        }
       }),
     );
   }

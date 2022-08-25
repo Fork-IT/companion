@@ -18,7 +18,7 @@ import '../user_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
-
+int? theScore;
 int? switchValue;
 
 class ProfilePage extends StatelessWidget{
