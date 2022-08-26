@@ -29,7 +29,7 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add image of your loved once'),
+        title: const Text('Add image of your loved ones'),
         elevation: 20,
         centerTitle: true,
         backgroundColor: Colors.cyan,

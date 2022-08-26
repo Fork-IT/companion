@@ -1,5 +1,13 @@
 // import 'package:flutter/material.dart';
+<<<<<<< HEAD
 // import 'item_model.dart';
+=======
+// import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+// import 'package:get/get.dart';
+// import '../identify/controllers/identify_task_controller.dart';
+// import 'item_model.dart';
+// import 'package:finaltwo/identify/models/identify_task.dart';
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
 //
 // class MatchPairData extends StatefulWidget {
 //   const MatchPairData({Key? key}) : super(key: key);
@@ -9,11 +17,18 @@
 // }
 //
 // class _HomeScreenState extends State<MatchPairData> {
+<<<<<<< HEAD
 //   late List<ItemModel> items;
+=======
+//   final _taskController = Get.put(IdentifyTaskController());
+//   // IdentifyTask task = _taskController.taskList[index];
+//   List<ItemModel>? items;
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
 //   late List<ItemModel> items2;
 //   late int score;
 //   late bool gameOver;
 //
+<<<<<<< HEAD
 //   initGame() {
 //     gameOver = false;
 //     score = 0;
@@ -34,6 +49,102 @@
 //     items2.shuffle();
 //   }
 //
+=======
+//   // initGame() async {
+//   //   Obx(() {
+//   //   gameOver = false;
+//   //   score = 0;
+//   //   ListView.builder(
+//   //
+//   //       itemCount: _taskController.taskList.length,
+//   //
+//   //       itemBuilder: (_, index) {
+//   //         IdentifyTask task = _taskController.taskList[index];
+//   //         items = [
+//   //           ItemModel(value: task.name, name: task.name, img: task.photo),
+//   //           ItemModel(value: task.name, name: task.name, img: task.photo),
+//   //           ItemModel(value: task.name, name: task.name, img: task.photo),
+//   //           // ItemModel(value: 'Medicines', name: 'Medicines', img: 'assets/images/medicine.png'),
+//   //           // ItemModel(value: 'Eye Glass', name: 'Eye Glass', img: 'assets/images/spcs.png'),
+//   //           // ItemModel(value: 'Walk Stick', name: 'Walk Stick', img: 'assets/images/walkingstick.png'),
+//   //           // ItemModel(value: 'Television', name: 'Television', img: 'assets/images/tv.png'),
+//   //           // ItemModel(value: 'Cards', name: 'Cards', img: 'assets/images/card.png'),
+//   //           // ItemModel(value: 'Hand Wash', name: 'Hand Wash', img: 'assets/images/handwash.png'),
+//   //         ];
+//   //         return Text("YES");
+//   //       });
+//   //
+//   //   items2 = List<ItemModel>.from(items!);
+//   //
+//   //   items!.shuffle();
+//   //   items2.shuffle();
+//   //   return Text("TEST");
+//   // });
+//   //       }
+//
+//   initGame() {
+//     return Expanded(
+//       child: Obx((){
+//           return ListView.builder(
+//               itemCount: _taskController.taskList.length,
+//
+//               itemBuilder: (_, index) {
+//                 IdentifyTask task = _taskController.taskList[index];
+//                 return AnimationConfiguration.staggeredList(
+//                     position: index,
+//                     child: SlideAnimation(
+//                       child: FadeInAnimation(
+//                         child: Row(
+//                             children: [
+//
+//                     ]
+//                     //       children: [
+//                     //         GestureDetector(
+//                     //           onLongPress: () {
+//                     //             _showBottomSheet(context, task);
+//                     //           },
+//                     //           onTap: () {
+//                     //             showDialog(
+//                     //               context: context,
+//                     //               builder: (ctx) =>
+//                     //                   AlertDialog(
+//                     //                     title: Text(
+//                     //                       "Name : ${task.name ??
+//                     //                           ""}\nRelation : ${task.relation ??
+//                     //                           ""}",
+//                     //                     ),
+//                     //                     actions: <Widget>[
+//                     //                       TextButton(
+//                     //                         onPressed: () {
+//                     //                           Navigator.of(ctx).pop();
+//                     //                         },
+//                     //                         child: const Text("Ok"),
+//                     //                       ),
+//                     //                       TextButton(
+//                     //                         onPressed: () {
+//                     //                           OpenFile.open(task.path);
+//                     //                           print(task.path);
+//                     //                         },
+//                     //                         child: const Text("Play audio"),
+//                     //                       ),
+//                     //                     ],
+//                     //                   ),
+//                     //             );
+//                     //           },
+//                     //           child: IdentifyTaskTile(task),
+//                     //         )
+//                     //       ],
+//                     //     ),
+//                     //   ),
+//                     // )
+//                 )
+//               });
+//       }),
+//     );
+//   }
+//
+//
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
 //   @override
 //   void initState() {
 //     super.initState();
@@ -42,7 +153,11 @@
 //
 //   @override
 //   Widget build(BuildContext context) {
+<<<<<<< HEAD
 //     if (items.length == 0) gameOver = true;
+=======
+//     if (items!.length == 0) gameOver = true;
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
 //     return Scaffold(
 //       body: Container(
 //         height: 1000,
@@ -96,7 +211,11 @@
 //                     children: [
 //                       Spacer(),
 //                       Column(
+<<<<<<< HEAD
 //                         children: items.map((item) {return Container(
+=======
+//                         children: items!.map((item) {return Container(
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
 //                           margin: EdgeInsets.all(8),
 //                           child: Draggable<ItemModel>(
 //                             data: item,
@@ -123,7 +242,11 @@
 //                             onAccept: (receivedItem) {
 //                               if (item.value == receivedItem.value) {
 //                                 setState(() {
+<<<<<<< HEAD
 //                                   items.remove(receivedItem);
+=======
+//                                   items!.remove(receivedItem);
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
 //                                   items2.remove(item);
 //                                 });
 //                                 score += 10;

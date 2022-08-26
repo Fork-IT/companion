@@ -18,9 +18,11 @@ import '../ui/home_page1.dart';
 import '../user_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:toggle_switch/toggle_switch.dart';
+import '../feedback_form.dart';
 
-
+int? theScore;
 int? switchValue;
+int global_score = 0;
 
 class ProfilePage extends StatelessWidget{
   final Function(User?)? onSignOut;
@@ -368,6 +370,7 @@ class ProfilePage extends StatelessWidget{
                   );
                 },
               ),
+<<<<<<< HEAD
               // SizedBox(height: 25,),
               // Text(
               //     "Reminder notification :",
@@ -421,6 +424,23 @@ class ProfilePage extends StatelessWidget{
               //   },
               // ),
 
+=======
+              SizedBox(height: 35,),
+              Text(
+                  "Total Score : ${global_score}",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                  )
+              ),
+              // ElevatedButton(onPressed: () {
+              //   Get.to()
+              // }, child: Text(
+              //   "Feedback"
+              // )
+              // )
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
             ],
           ),
         ),

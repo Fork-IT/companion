@@ -83,10 +83,17 @@ class ChoiceMatchPair extends StatelessWidget {
                 padding:  const EdgeInsets.all(20.0),
                 child: InkWell(
                   onTap: (){
+<<<<<<< HEAD
                     Navigator.push(context,
                       MaterialPageRoute(
                           builder: (context)=> (MatchPair())),
                     );
+=======
+                    // Navigator.push(context,
+                    //   MaterialPageRoute(
+                    //       builder: (context)=> (MatchPairData())),
+                    // );
+>>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
                   },
                   child: Container(
                     height: 200,

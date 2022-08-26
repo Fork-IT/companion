@@ -7,8 +7,10 @@ import 'package:home_widget/home_widget.dart';
 import '../decisions_tree.dart';
 import '../notification_service.dart';
 import '../user_preferences.dart';
+import 'package:flutter_share/flutter_share.dart';
 
 var notifyHelper;
+var greetmsg;
 
 void backgroundCallback(Uri? data) async {
   print(data);
@@ -16,11 +18,11 @@ void backgroundCallback(Uri? data) async {
   if (data!.host == 'titleclicked') {
     final greetings = [
       'Play Games !',
-      'Contact your loved once !',
       'Get directions !',
       'Set to-do tasks !',
       'Do exercise !',
       'Listen to music !',
+      'Identify your loved ones'
     ];
     final selectedGreeting = greetings[Random().nextInt(greetings.length)];
 
@@ -66,11 +68,43 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _SplashScreenState() {
+    final dttime = DateTime.now().hour;
+    var bodymsg="Happy Jansmathami :)";
+    greetmsg;
+
+    if(dttime > 5 && dttime < 12){
+      greetmsg = "Good Morning!!";
+    }else if(dttime > 12 && dttime < 17){
+      greetmsg = "Good Afternoon!!";
+    }
+    else if(dttime > 17 && dttime < 20){
+      greetmsg = "Good Evening!!";
+    }
+    else {
+      greetmsg = "Good Night!!";
+    }
     new Timer(const Duration(milliseconds: 2000), () {
       setState(() {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (context) => DecisionsTree()), (
             route) => false);
+        showDialog(
+          context: context,
+          builder: (ctx) =>
+              AlertDialog(
+                title: Text(
+                  "Hello! ${greetmsg}\n\nHappy Janmashtami, May the blessings of lord Krishna always be with you and your family."
+                ),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      shareApp();
+                    },
+                    child: const Text("Share"),
+                  ),
+                ],
+              ),
+        );
       });
     });
 
@@ -82,6 +116,14 @@ class _SplashScreenState extends State<SplashScreen> {
       });
     }
     );
+  }
+
+  Future<void> shareApp() async {
+    await FlutterShare.share(
+        title: 'title',
+        text: 'Hello! ${greetmsg}\n\nHappy Janmashtami, May the blessings of lord Krishna always be with you and your family.',
+        linkUrl: 'https://flutter.dev/',
+        chooserTitle: 'Example Chooser Title');
   }
 
   @override
@@ -145,7 +187,7 @@ class _SplashScreenState extends State<SplashScreen> {
     try {
       await Future.wait([
         HomeWidget.saveWidgetData<String>('title', "Companion"),
-        HomeWidget.saveWidgetData<String>('message', "Companion - your true Buddy is with you !"),
+        HomeWidget.saveWidgetData<String>('message', "Companion - your true buddy is with you !"),
       ]);
     } on PlatformException catch (exception) {
       debugPrint('Error Sending Data. $exception');
