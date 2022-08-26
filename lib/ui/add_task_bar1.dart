@@ -30,7 +30,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   //   15,
   //   20,
   // ];
-  String _selectedRepeat = "None";
+  String _selectedRepeat = "Daily";
   List<String> repeatList = [
     "None",
     "Daily",
@@ -50,11 +50,6 @@ class _AddTaskPageState extends State<AddTaskPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-<<<<<<< HEAD
-              Text(
-                "Add Task",
-                style: headingStyle,
-              ),
               SizedBox(height: 17,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -92,7 +87,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      _titleController.text = "Gadgets charging";
+                      _titleController.text = "Phone charging";
                       _noteController.text = "Don't forget to charge your devices";
                       setState(() {
                         _startTime = DateFormat("hh:mm a").format(DateTime.parse('2022-08-26 12:00:50.335213')).toString();
@@ -140,8 +135,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
               ),
               Divider(thickness: 2,
                 color: Colors.black,),
-=======
->>>>>>> c172ba5737b393403c6832559b58ef1a5b76b7f3
+
               MyInputField(title: "Title", hint: "Enter your title", controller: _titleController,),
               MyInputField(title: "Note", hint: "Enter your note", controller: _noteController,),
               MyInputField(title: "Date", hint: DateFormat.yMd().format(_selectedDate),

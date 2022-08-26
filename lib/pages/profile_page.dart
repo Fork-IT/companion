@@ -329,10 +329,7 @@ class ProfilePage extends StatelessWidget{
                   //SystemNavigator.pop();
                 },
               ),
-<<<<<<< HEAD
-=======
               Divider(color: Theme.of(context).primaryColor, height: 1,),
->>>>>>> c172ba5737b393403c6832559b58ef1a5b76b7f3
               // SizedBox(height: 25,),
               // Text(
               //     "Reminder notification :",
@@ -385,10 +382,7 @@ class ProfilePage extends StatelessWidget{
               //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
               //   },
               // ),
-<<<<<<< HEAD
-=======
 
->>>>>>> c172ba5737b393403c6832559b58ef1a5b76b7f3
               SizedBox(height: 35,),
               Text(
                   "Total Score : ${global_score}",
