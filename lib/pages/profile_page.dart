@@ -29,16 +29,6 @@ class ProfilePage extends StatelessWidget{
 
 
   var snackBar;
-  //var notifyHelper;
-
-
-//   @override
-//   State<StatefulWidget> createState() {
-//     return _ProfilePageState();
-//   }
-// }
-//
-// class _ProfilePageState extends State<ProfilePage>{
   Card profilePage(String title, String img, int index){
     return Card(
       elevation: 2,
@@ -84,17 +74,14 @@ class ProfilePage extends StatelessWidget{
         child: InkWell(
           onTap: () {
             if (index == 0) {
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage()));
               Get.to(IdentifyHomePage());
               //1.item
             }
             if (index == 1) {
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => GameDashboard()));
               Get.to(GameDashboard());
               //2.item
             }
             if (index == 2) {
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
               Get.to(HomePage());
               //3.item
             }
@@ -104,23 +91,19 @@ class ProfilePage extends StatelessWidget{
             }
             if (index == 4) {
               Get.to(HomePage1());
-              //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage1()));
               //5.item
             }
             if (index == 5) {
               //Get.to(MainPage1());
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => Splash()));
               //6.item
             }
             if (index == 6) {
               Get.to(GetStart());
-              //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage1()));
               //7.item
             }
             if (index == 7) {
               Get.to(ExerciseHome());
              //Get.to(HomePage1());
-              //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage1()));
               //8.item
             }
           },
@@ -191,23 +174,6 @@ class ProfilePage extends StatelessWidget{
           ),
         ),
         actions: [
-          //Container(
-          //margin: EdgeInsets.only( top: 16, right: 16,),
-          //child: Stack(
-          //children: <Widget>[
-          //Icon(Icons.notifications),
-          //Positioned(
-          //right: 0,
-          //child: Container(
-          //padding: EdgeInsets.all(1),
-          //decoration: BoxDecoration( color: Colors.red, borderRadius: BorderRadius.circular(6),),
-          //constraints: BoxConstraints( minWidth: 12, minHeight: 12, ),
-          //child: Text( '5', style: TextStyle(color: Colors.white, fontSize: 8,), textAlign: TextAlign.center,),
-          //),
-          //)
-          //],
-          //),
-          //)
         ],
       ),
       body: Column(
@@ -221,7 +187,6 @@ class ProfilePage extends StatelessWidget{
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const <Widget>[
-
                   ],
                 )
               ],
@@ -235,10 +200,8 @@ class ProfilePage extends StatelessWidget{
               children: [
                 profilePage("Identify Relation", "assets/identify.png", 0),
                 profilePage("Game Zone", "assets/game.png", 1),
-                //profilePage("Contact Family", "assets/call.png", 2),
                 profilePage("Directions", "assets/location.png", 3),
                 profilePage("Daily Tasks", "assets/todo.png", 4),
-                //profilePage("Take Notes", "assets/note.png", 5),
                 profilePage("Music Medicine", "assets/musicc.png", 6),
                 profilePage("Exercise time !!", "assets/yoga.png", 7),
               ],
@@ -265,23 +228,6 @@ class ProfilePage extends StatelessWidget{
               Text(''),
               Image.asset('assets/logo1.png',
               height: 180,),
-              // DrawerHeader(
-              //   // decoration: BoxDecoration(
-              //   //   color: Theme.of(context).primaryColor,
-              //   //   gradient: LinearGradient(
-              //   //     begin: Alignment.topLeft,
-              //   //     end: Alignment.bottomRight,
-              //   //     stops: [0.0, 1.0],
-              //   //     colors: [ Theme.of(context).primaryColor,Theme.of(context).accentColor,],
-              //   //   ),
-              //   // ),
-              //   child: Container(
-              //     alignment: Alignment.bottomLeft,
-              //     child: Text("Companion",
-              //       style: TextStyle(fontSize: 25,color: Colors.white, fontWeight: FontWeight.bold),
-              //     ),
-              //   ),
-              // ),
               Text(''),
               ListTile(
                 leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
@@ -330,59 +276,6 @@ class ProfilePage extends StatelessWidget{
                 },
               ),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
-              // SizedBox(height: 25,),
-              // Text(
-              //     "Reminder notification :",
-              //     textAlign: TextAlign.center,
-              //     style: TextStyle(
-              //         fontSize: 16,
-              //         fontWeight: FontWeight.bold
-              //     )
-              // ),
-              // SizedBox(height: 7,),
-              // Text(
-              //     "Turn ON to get reminder notification every hour.",
-              //     textAlign: TextAlign.center,
-              //     style: TextStyle(
-              //       fontSize: 15,
-              //     )
-              // ),
-              //
-              // SizedBox(height: 12,),
-              // ToggleSwitch(
-              //   minWidth: 150.0,
-              //   cornerRadius: 20.0,
-              //   activeBgColors: [[Colors.red[800]!], [Colors.green[800]!]],
-              //   activeFgColor: Colors.white,
-              //   inactiveBgColor: Colors.grey,
-              //   inactiveFgColor: Colors.white,
-              //   initialLabelIndex: switchValue,
-              //   totalSwitches: 2,
-              //   labels: ['Off', 'On'],
-              //   radiusStyle: true,
-              //   onToggle: (switchValue) async {
-              //     print('switched to: $switchValue');
-              //     await UserPreferences.setSwitchValue(switchValue!);
-              //     if(switchValue == 0)
-              //     {
-              //       //off
-              //       snackBar = SnackBar(
-              //         content: Text('Reminder notification is turned OFF !'),
-              //       );
-              //       await notifyHelper.cancelNotification(1024);
-              //     }
-              //     else
-              //     {
-              //       //on
-              //       snackBar = SnackBar(
-              //         content: Text('Reminder notification is turned ON !'),
-              //       );
-              //       await notifyHelper.repeatNotification();
-              //     }
-              //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              //   },
-              // ),
-
               SizedBox(height: 35,),
               Text(
                   "Total Score : ${global_score}",
@@ -392,12 +285,6 @@ class ProfilePage extends StatelessWidget{
                       fontWeight: FontWeight.bold
                   )
               ),
-              // ElevatedButton(onPressed: () {
-              //   Get.to()
-              // }, child: Text(
-              //   "Feedback"
-              // )
-              // )
             ],
           ),
         ),

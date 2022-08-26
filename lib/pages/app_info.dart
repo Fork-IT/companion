@@ -14,7 +14,7 @@ class _AppInfoState extends State<AppInfo> {
     "assets/location.png",
     "assets/workout.png",
     "images/music.png",
-    "assets/id.png",
+    "assets/family.png",
     "assets/widget.png",
   ];
 
@@ -52,7 +52,6 @@ class _AppInfoState extends State<AppInfo> {
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(100.0),
                     child: Container(
-                      // changing from 200 to 150 as to look better
                       height: 150.0,
                       width: 150.0,
                       child: ClipOval(
@@ -121,9 +120,9 @@ class _AppInfoState extends State<AppInfo> {
           customcard("To-Do Tasks", images[1], des[1]),
           customcard("Get Directions", images[2], des[2]),
           customcard("Exercise Zone", images[3], des[3]),
-          customcard("Widget", images[4], des[4]),
+          customcard("Widget", images[6], des[6]),
           customcard("Family Time", images[5], des[5]),
-          customcard("Music Medicine", images[6], des[6]),
+          customcard("Music Medicine", images[4], des[4]),
 
         ],
       ),

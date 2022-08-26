@@ -95,7 +95,7 @@ class NotifyHelper {
                 channelDescription: 'your channel description',
                 importance: Importance.max,
                 priority: Priority.high,
-                sound: RawResourceAndroidNotificationSound('a_long_cold_sting'),
+                sound: RawResourceAndroidNotificationSound('companion'),
             )
         ),
         androidAllowWhileIdle: true,

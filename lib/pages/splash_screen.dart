@@ -92,12 +92,9 @@ class _SplashScreenState extends State<SplashScreen> {
           context: context,
           builder: (ctx) =>
               AlertDialog(
-                title: Image(image: AssetImage('assets/music.png'),width: 500, height: 250,),
-
-                // // title: Text(
-                //   Image(image: AssetImage('assets/music.png'),width: 500, height: 250,),
-                //   //"Hello! ${greetmsg}\n\nHappy Janmashtami, May the blessings of lord Krishna always be with you and your family."
-                // ),
+                title: Text(
+                  "Hello! ${greetmsg}\n\nHappy Janmashtami, May the blessings of lord Krishna always be with you and your family."
+                ),
                 actions: <Widget>[
                   TextButton(
                     onPressed: () {
