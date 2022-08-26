@@ -102,6 +102,7 @@ class _IdentifyHomePageState extends State<IdentifyHomePage> {
                                 _showBottomSheet(context, task);
                               },
                               onTap: () {
+                                print(task.photo);
                                 showDialog(
                                   context: context,
                                   builder: (ctx) =>
