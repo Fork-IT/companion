@@ -85,7 +85,7 @@ class ChoiceMatchPair extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context,
                       MaterialPageRoute(
-                          builder: (context)=> (MatchPairData())),
+                          builder: (context)=> (MatchPair())),
                     );
                   },
                   child: Container(

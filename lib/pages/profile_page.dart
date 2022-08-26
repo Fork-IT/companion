@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:finaltwo/exercise_zone/exercise_home.dart';
-import 'package:finaltwo/notes/pages/main_page.dart';
+import 'package:finaltwo/feedback/FeedBack.dart';
 import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/splash_screen.dart';
 import 'package:finaltwo/ui/home_page.dart';
@@ -12,6 +12,7 @@ import 'package:finaltwo/pages/game_dashboard.dart';
 import 'package:finaltwo/pages/login_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../identify/ui/identify_home_page.dart';
 import '../ui/home_page1.dart';
 import '../user_preferences.dart';
@@ -106,7 +107,7 @@ class ProfilePage extends StatelessWidget{
               //5.item
             }
             if (index == 5) {
-              Get.to(MainPage1());
+              //Get.to(MainPage1());
               // Navigator.push(context, MaterialPageRoute(builder: (context) => Splash()));
               //6.item
             }
@@ -233,10 +234,10 @@ class ProfilePage extends StatelessWidget{
               children: [
                 profilePage("Identify Relation", "assets/identify.png", 0),
                 profilePage("Game Zone", "assets/game.png", 1),
-                profilePage("Contact Family", "assets/call.png", 2),
+                //profilePage("Contact Family", "assets/call.png", 2),
                 profilePage("Directions", "assets/location.png", 3),
                 profilePage("Daily Tasks", "assets/todo.png", 4),
-                profilePage("Take Notes", "assets/note.png", 5),
+                //profilePage("Take Notes", "assets/note.png", 5),
                 profilePage("Music Medicine", "assets/musicc.png", 6),
                 profilePage("Exercise time !!", "assets/yoga.png", 7),
               ],
@@ -289,6 +290,15 @@ class ProfilePage extends StatelessWidget{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfo()),);
                 },
               ),
+              Text(''),
+              Divider(color: Theme.of(context).primaryColor, height: 1,),
+              ListTile(
+                leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
+                title: Text('FeeBack',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FeedBack()),);
+                },
+              ),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
                 leading: Icon(Icons.logout_outlined, size: _drawerIconSize,color: Theme.of(context).accentColor,),
@@ -320,58 +330,96 @@ class ProfilePage extends StatelessWidget{
                   //SystemNavigator.pop();
                 },
               ),
-              SizedBox(height: 25,),
-              Text(
-                  "Reminder notification :",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold
-                  )
-              ),
-              SizedBox(height: 7,),
-              Text(
-                  "Turn ON to get reminder notification every hour.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                  )
-              ),
+              Divider(color: Theme.of(context).primaryColor, height: 1,),
+              ListTile(
+                leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
+                title: Text('Daily Message',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
+                onTap: () {
+                  final dttime = DateTime.now().hour;
+                  var bodymsg="Happy Jansmathami :)";
+                  var greetmsg;
 
-              SizedBox(height: 12,),
-              ToggleSwitch(
-                minWidth: 150.0,
-                cornerRadius: 20.0,
-                activeBgColors: [[Colors.red[800]!], [Colors.green[800]!]],
-                activeFgColor: Colors.white,
-                inactiveBgColor: Colors.grey,
-                inactiveFgColor: Colors.white,
-                initialLabelIndex: switchValue,
-                totalSwitches: 2,
-                labels: ['Off', 'On'],
-                radiusStyle: true,
-                onToggle: (switchValue) async {
-                  print('switched to: $switchValue');
-                  await UserPreferences.setSwitchValue(switchValue!);
-                  if(switchValue == 0)
-                  {
-                    //off
-                    snackBar = SnackBar(
-                      content: Text('Reminder notification is turned OFF !'),
-                    );
-                    await notifyHelper.cancelNotification(1024);
+                  if(dttime > 5 && dttime < 12){
+                    greetmsg = "Good Morning!!";
+                  }else if(dttime > 12 && dttime < 17){
+                    greetmsg = "Good Afternoon!!";
                   }
-                  else
-                  {
-                    //on
-                    snackBar = SnackBar(
-                      content: Text('Reminder notification is turned ON !'),
-                    );
-                    await notifyHelper.repeatNotification();
+                  else if(dttime > 17 && dttime < 20){
+                    greetmsg = "Good Evening!!";
                   }
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  else {
+                    greetmsg = "Good Night!!";
+                  }
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text("Today"),
+                      content: Text(
+                          "${greetmsg}"+"\n\n${bodymsg}"
+                        // "Hello there a message from "
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () async => await launch("https://wa.me/${919016775087}?text=${greetmsg}"+"${bodymsg}"),
+                            child: Text('Share on Whatsapp')
+                        )
+                      ],
+                    ),
+                  );
                 },
               ),
+              // SizedBox(height: 25,),
+              // Text(
+              //     "Reminder notification :",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //         fontSize: 16,
+              //         fontWeight: FontWeight.bold
+              //     )
+              // ),
+              // SizedBox(height: 7,),
+              // Text(
+              //     "Turn ON to get reminder notification every hour.",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //       fontSize: 15,
+              //     )
+              // ),
+              //
+              // SizedBox(height: 12,),
+              // ToggleSwitch(
+              //   minWidth: 150.0,
+              //   cornerRadius: 20.0,
+              //   activeBgColors: [[Colors.red[800]!], [Colors.green[800]!]],
+              //   activeFgColor: Colors.white,
+              //   inactiveBgColor: Colors.grey,
+              //   inactiveFgColor: Colors.white,
+              //   initialLabelIndex: switchValue,
+              //   totalSwitches: 2,
+              //   labels: ['Off', 'On'],
+              //   radiusStyle: true,
+              //   onToggle: (switchValue) async {
+              //     print('switched to: $switchValue');
+              //     await UserPreferences.setSwitchValue(switchValue!);
+              //     if(switchValue == 0)
+              //     {
+              //       //off
+              //       snackBar = SnackBar(
+              //         content: Text('Reminder notification is turned OFF !'),
+              //       );
+              //       await notifyHelper.cancelNotification(1024);
+              //     }
+              //     else
+              //     {
+              //       //on
+              //       snackBar = SnackBar(
+              //         content: Text('Reminder notification is turned ON !'),
+              //       );
+              //       await notifyHelper.repeatNotification();
+              //     }
+              //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              //   },
+              // ),
 
             ],
           ),
