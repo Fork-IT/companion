@@ -50,7 +50,6 @@ class _AddTaskPageState extends State<AddTaskPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-<<<<<<< HEAD
               Text(
                 "Add Task",
                 style: headingStyle,
@@ -140,8 +139,6 @@ class _AddTaskPageState extends State<AddTaskPage> {
               ),
               Divider(thickness: 2,
                 color: Colors.black,),
-=======
->>>>>>> c172ba5737b393403c6832559b58ef1a5b76b7f3
               MyInputField(title: "Title", hint: "Enter your title", controller: _titleController,),
               MyInputField(title: "Note", hint: "Enter your note", controller: _noteController,),
               MyInputField(title: "Date", hint: DateFormat.yMd().format(_selectedDate),
