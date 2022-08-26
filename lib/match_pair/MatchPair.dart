@@ -19,15 +19,15 @@ class _HomeScreenState extends State<MatchPair> {
     gameOver = false;
     score = 0;
     items = [
-      ItemModel(value: 'Fruit', name: 'Fruit', img: 'assets/images/apl.png'),
-      ItemModel(value: 'Radio', name: 'Radio', img: 'assets/images/radio.png'),
-      ItemModel(value: 'News Paper', name: 'News Paper', img: 'assets/images/news.png'),
-      ItemModel(value: 'Medicines', name: 'Medicines', img: 'assets/images/medicine.png'),
-      ItemModel(value: 'Eye Glass', name: 'Eye Glass', img: 'assets/images/spcs.png'),
-      ItemModel(value: 'Walk Stick', name: 'Walk Stick', img: 'assets/images/walkingstick.png'),
-      ItemModel(value: 'Television', name: 'Television', img: 'assets/images/tv.png'),
-      ItemModel(value: 'Cards', name: 'Cards', img: 'assets/images/card.png'),
-      ItemModel(value: 'Hand Wash', name: 'Hand Wash', img: 'assets/images/handwash.png'),
+      ItemModel(value: 'Fruit', name: 'Fruit', imgleft: 'assets/images/apl.png', imgright: 'assets/images/apl.png'),
+      ItemModel(value: 'Radio', name: 'Radio', imgleft: 'assets/images/radio.png', imgright: 'assets/images/radio.png'),
+      ItemModel(value: 'News Paper', name: 'News Paper', imgleft: 'assets/images/news.png', imgright: 'assets/images/news.png'),
+      ItemModel(value: 'Medicines', name: 'Medicines', imgleft: 'assets/images/medicine.png', imgright: 'assets/images/medicine.png'),
+      ItemModel(value: 'Eye Glass', name: 'Eye Glass', imgleft: 'assets/images/spcs.png', imgright: 'assets/images/spcs.png'),
+      ItemModel(value: 'Walk Stick', name: 'Walk Stick', imgleft: 'assets/images/walkingstick.png', imgright: 'assets/images/walkingstick.png'),
+      ItemModel(value: 'Television', name: 'Television', imgleft: 'assets/images/tv.png', imgright: 'assets/images/tv.png'),
+      ItemModel(value: 'Cards', name: 'Cards', imgleft: 'assets/images/card.png', imgright: 'assets/images/card.png'),
+      ItemModel(value: 'Hand Wash', name: 'Hand Wash', imgleft: 'assets/images/handwash.png', imgright: 'assets/images/handwash.png'),
     ];
     items2 = List<ItemModel>.from(items);
 
@@ -103,15 +103,15 @@ class _HomeScreenState extends State<MatchPair> {
                             data: item,
                             childWhenDragging: Container(
                               height: 100,
-                              child: Image.asset(item.img!),
+                              child: Image.asset(item.imgleft!),
                             ),
                             feedback: Container(
                               height: 100,
-                              child: Image.asset(item.img!),
+                              child: Image.asset(item.imgleft!),
                             ),
                             child: Container(
                               height: 70,
-                              child: Image.asset(item.img!),
+                              child: Image.asset(item.imgleft!),
                             ),
                           ),
                         );
@@ -163,14 +163,8 @@ class _HomeScreenState extends State<MatchPair> {
                                     MediaQuery.of(context).size.width / 6.5,
                                     width: MediaQuery.of(context).size.width / 3,
                                     margin: const EdgeInsets.all(12),
-                                    child: Text(
-                                      item.name!,
-                                      style:const TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold
-                                      ),
-                                    )),
+                                    child: Image.asset(item.imgright!)
+                                ),
                           );
                         }).toList(),
                       ),

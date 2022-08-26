@@ -40,12 +40,17 @@ class _AddTaskPageState extends State<AddTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(context),
+      appBar: AppBar(
+        backgroundColor: Colors.cyan,
+        title: Text('Add Task'),
+        centerTitle: true,
+      ),
       body: Container(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20,top: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
+<<<<<<< HEAD
               Text(
                 "Add Task",
                 style: headingStyle,
@@ -135,6 +140,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
               ),
               Divider(thickness: 2,
                 color: Colors.black,),
+=======
+>>>>>>> c172ba5737b393403c6832559b58ef1a5b76b7f3
               MyInputField(title: "Title", hint: "Enter your title", controller: _titleController,),
               MyInputField(title: "Note", hint: "Enter your note", controller: _noteController,),
               MyInputField(title: "Date", hint: DateFormat.yMd().format(_selectedDate),
@@ -258,10 +265,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
               Text(
                 "OR",
                 style: TextStyle(
-                  fontSize: 20
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Merriweather'
                 ),
               ),
               TextField(
+                textAlign: TextAlign.center,
                 controller: _msgBox,
                 decoration: InputDecoration(
                   hintText: "Paste comma separated message here",
@@ -274,11 +284,14 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ),
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                          color: context.theme.backgroundColor,
+                          color: Colors.black,
                           width: 0
                       )
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               MyButton(label: "Create Task", onTap: () async{
                 toDoData = _msgBox.text.split(',').toList();

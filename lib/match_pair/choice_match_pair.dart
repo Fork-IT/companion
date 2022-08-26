@@ -38,6 +38,9 @@ class ChoiceMatchPair extends StatelessWidget {
           ),
           child: Column(
             children: [
+              SizedBox(
+                height: 30,
+              ),
               Padding(
                 padding:  const EdgeInsets.all(20.0),
                 child: InkWell(
@@ -48,25 +51,16 @@ class ChoiceMatchPair extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    height: 200,
+                    height: 285,
                     width: double.infinity,
                     child: Padding(
-                      padding:  const EdgeInsets.all(8.0),
+                      padding:  const EdgeInsets.all(16.0),
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 150,
-                              child: Image.asset('assets/drag.png',)
+                              height: 250,
+                              child: Image.asset('assets/jodi.png',)
                           ),
-                          const Spacer(),
-                          const Text(
-                            'Static Match',
-                            style: TextStyle(
-                                color: Colors.deepOrange,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
-                            ),
-                          )
                         ],
                       ),
                     ),
@@ -78,38 +72,37 @@ class ChoiceMatchPair extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                  height: 40,
+              ),
 
               Padding(
                 padding:  const EdgeInsets.all(20.0),
                 child: InkWell(
                   onTap: (){
+
+                    Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context)=> (MatchPair())));
+
                     // Navigator.push(context,
                     //   MaterialPageRoute(
                     //       builder: (context)=> (MatchPairData())),
                     // );
                   },
                   child: Container(
-                    height: 200,
+                    height: 285,
                     width: double.infinity,
                     child: Padding(
-                      padding:  const EdgeInsets.all(8.0),
+                      padding:  const EdgeInsets.all(16.0),
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 150,
-                              child: Image.asset('assets/quizzie.png',)
+                              height: 250,
+                              child: Image.asset('assets/saath.png',)
 
                           ),
-                          const Spacer(),
-                          const Text(
-                            'Match Static Data',
-                            style: TextStyle(
-                                color: Colors.pinkAccent,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
-                            ),
 
-                          )
                         ],
                       ),
                     ),
@@ -120,6 +113,10 @@ class ChoiceMatchPair extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                  height: 37,
+
               ),
             ],
           ),

@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:finaltwo/exercise_zone/exercise_home.dart';
-import 'package:finaltwo/notes/pages/main_page.dart';
+import 'package:finaltwo/feedback/FeedBack.dart';
 import 'package:finaltwo/pages/music_getstarted.dart';
 import 'package:finaltwo/pages/splash_screen.dart';
 import 'package:finaltwo/ui/home_page.dart';
@@ -12,12 +12,12 @@ import 'package:finaltwo/pages/game_dashboard.dart';
 import 'package:finaltwo/pages/login_page.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../identify/ui/identify_home_page.dart';
 import '../ui/home_page1.dart';
 import '../user_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import '../feedback_form.dart';
 
 int? theScore;
 int? switchValue;
@@ -44,7 +44,7 @@ class ProfilePage extends StatelessWidget{
       elevation: 2,
       margin: const EdgeInsets.all(8),
       child: Container(
-        decoration: index == 0 || index == 3 || index == 4
+        decoration: index == 0 || index == 2 || index == 4 || index == 6
             ? BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           gradient: const LinearGradient(
@@ -108,7 +108,7 @@ class ProfilePage extends StatelessWidget{
               //5.item
             }
             if (index == 5) {
-              Get.to(MainPage1());
+              //Get.to(MainPage1());
               // Navigator.push(context, MaterialPageRoute(builder: (context) => Splash()));
               //6.item
             }
@@ -283,12 +283,19 @@ class ProfilePage extends StatelessWidget{
               //   ),
               // ),
               Text(''),
-              Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
                 leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
                 title: Text('App Guide',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfo()),);
+                },
+              ),
+              Divider(color: Theme.of(context).primaryColor, height: 1,),
+              ListTile(
+                leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
+                title: Text('FeeBack',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FeedBack()),);
                 },
               ),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
@@ -322,6 +329,10 @@ class ProfilePage extends StatelessWidget{
                   //SystemNavigator.pop();
                 },
               ),
+<<<<<<< HEAD
+=======
+              Divider(color: Theme.of(context).primaryColor, height: 1,),
+>>>>>>> c172ba5737b393403c6832559b58ef1a5b76b7f3
               // SizedBox(height: 25,),
               // Text(
               //     "Reminder notification :",
@@ -374,6 +385,10 @@ class ProfilePage extends StatelessWidget{
               //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
               //   },
               // ),
+<<<<<<< HEAD
+=======
+
+>>>>>>> c172ba5737b393403c6832559b58ef1a5b76b7f3
               SizedBox(height: 35,),
               Text(
                   "Total Score : ${global_score}",
