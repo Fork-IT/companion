@@ -1,3 +1,4 @@
+import 'package:finaltwo/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:finaltwo/quiz_game/constants.dart';
@@ -30,9 +31,10 @@ class ScoreScreen extends StatelessWidget {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => WelcomeScreen(),
+                        builder: (context) => ProfilePage(),
                       ),
                           (route) => false);
+                  global_score = global_score + (_qnController.numOfCorrectAns * 10);
                 },
                 child: Text(
                     style: TextStyle(
