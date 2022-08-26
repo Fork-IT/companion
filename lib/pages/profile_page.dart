@@ -235,10 +235,10 @@ class ProfilePage extends StatelessWidget{
               children: [
                 profilePage("Identify Relation", "assets/identify.png", 0),
                 profilePage("Game Zone", "assets/game.png", 1),
-                profilePage("Contact Family", "assets/call.png", 2),
+                //profilePage("Contact Family", "assets/call.png", 2),
                 profilePage("Directions", "assets/location.png", 3),
                 profilePage("Daily Tasks", "assets/todo.png", 4),
-                profilePage("Take Notes", "assets/note.png", 5),
+                //profilePage("Take Notes", "assets/note.png", 5),
                 profilePage("Music Medicine", "assets/musicc.png", 6),
                 profilePage("Exercise time !!", "assets/yoga.png", 7),
               ],
@@ -322,58 +322,58 @@ class ProfilePage extends StatelessWidget{
                   //SystemNavigator.pop();
                 },
               ),
-              SizedBox(height: 25,),
-              Text(
-                  "Reminder notification :",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold
-                  )
-              ),
-              SizedBox(height: 7,),
-              Text(
-                  "Turn ON to get reminder notification every hour.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                  )
-              ),
-
-              SizedBox(height: 12,),
-              ToggleSwitch(
-                minWidth: 150.0,
-                cornerRadius: 20.0,
-                activeBgColors: [[Colors.red[800]!], [Colors.green[800]!]],
-                activeFgColor: Colors.white,
-                inactiveBgColor: Colors.grey,
-                inactiveFgColor: Colors.white,
-                initialLabelIndex: switchValue,
-                totalSwitches: 2,
-                labels: ['Off', 'On'],
-                radiusStyle: true,
-                onToggle: (switchValue) async {
-                  print('switched to: $switchValue');
-                  await UserPreferences.setSwitchValue(switchValue!);
-                  if(switchValue == 0)
-                  {
-                    //off
-                    snackBar = SnackBar(
-                      content: Text('Reminder notification is turned OFF !'),
-                    );
-                    await notifyHelper.cancelNotification(1024);
-                  }
-                  else
-                  {
-                    //on
-                    snackBar = SnackBar(
-                      content: Text('Reminder notification is turned ON !'),
-                    );
-                    await notifyHelper.repeatNotification();
-                  }
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                },
-              ),
+              // SizedBox(height: 25,),
+              // Text(
+              //     "Reminder notification :",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //         fontSize: 16,
+              //         fontWeight: FontWeight.bold
+              //     )
+              // ),
+              // SizedBox(height: 7,),
+              // Text(
+              //     "Turn ON to get reminder notification every hour.",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //       fontSize: 15,
+              //     )
+              // ),
+              //
+              // SizedBox(height: 12,),
+              // ToggleSwitch(
+              //   minWidth: 150.0,
+              //   cornerRadius: 20.0,
+              //   activeBgColors: [[Colors.red[800]!], [Colors.green[800]!]],
+              //   activeFgColor: Colors.white,
+              //   inactiveBgColor: Colors.grey,
+              //   inactiveFgColor: Colors.white,
+              //   initialLabelIndex: switchValue,
+              //   totalSwitches: 2,
+              //   labels: ['Off', 'On'],
+              //   radiusStyle: true,
+              //   onToggle: (switchValue) async {
+              //     print('switched to: $switchValue');
+              //     await UserPreferences.setSwitchValue(switchValue!);
+              //     if(switchValue == 0)
+              //     {
+              //       //off
+              //       snackBar = SnackBar(
+              //         content: Text('Reminder notification is turned OFF !'),
+              //       );
+              //       await notifyHelper.cancelNotification(1024);
+              //     }
+              //     else
+              //     {
+              //       //on
+              //       snackBar = SnackBar(
+              //         content: Text('Reminder notification is turned ON !'),
+              //       );
+              //       await notifyHelper.repeatNotification();
+              //     }
+              //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              //   },
+              // ),
               SizedBox(height: 35,),
               Text(
                   "Total Score : ${global_score}",

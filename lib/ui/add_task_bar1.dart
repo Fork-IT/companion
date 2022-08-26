@@ -50,6 +50,91 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 "Add Task",
                 style: headingStyle,
               ),
+              SizedBox(height: 17,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () {
+                      print(DateTime.now());
+                      print(DateTime.now().runtimeType);
+                      _titleController.text = "Take medicines";
+                      _noteController.text = "It's the time for medicines";
+                      setState(() {
+                        _startTime = DateFormat("hh:mm a").format(DateTime.parse('2022-08-26 21:00:50.335213')).toString();
+                      });
+                      print(_startTime);
+                    }, // Image tapped
+                    child: Image.asset(
+                      'images/images-removebg-preview.png', // Fixes border issues
+                      width: 50,
+                      height: 50,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _titleController.text = "Go for a walk";
+                      _noteController.text = "It's the time for your walk";
+                      setState(() {
+                        _startTime = DateFormat("hh:mm a").format(DateTime.parse('2022-08-26 07:00:50.335213')).toString();
+                      });
+                    }, // Image tapped
+                    child: Image.asset(
+                      'images/walking--v2.png', // Fixes border issues
+                      width: 50,
+                      height: 50,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _titleController.text = "Gadgets charging";
+                      _noteController.text = "Don't forget to charge your devices";
+                      setState(() {
+                        _startTime = DateFormat("hh:mm a").format(DateTime.parse('2022-08-26 12:00:50.335213')).toString();
+                      });
+                    }, // Image tapped
+                    child: Image.asset(
+                      'images/3513283.png', // Fixes border issues
+                      width: 50,
+                      height: 50,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _titleController.text = "Yoga and exercise";
+                      _noteController.text = "It's time for yoga and exercise";
+                      setState(() {
+                        _startTime = DateFormat("hh:mm a").format(DateTime.parse('2022-08-26 07:00:50.335213')).toString();
+                      });
+                    }, // Image tapped
+                    child: Image.asset(
+                      'images/2689027.png', // Fixes border issues
+                      width: 50,
+                      height: 50,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _titleController.text = "TV serial";
+                      _noteController.text = "Don't miss out your favourite TV serial";
+                      setState(() {
+                        _startTime = DateFormat("hh:mm a").format(DateTime.parse('2022-08-26 08:30:50.335213')).toString();
+                      });
+                    }, // Image tapped
+                    child: Image.asset(
+                      'images/1056977.png', // Fixes border issues
+                      width: 50,
+                      height: 50,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10,),
+              Text(
+                "Fill fields with the help of shortcuts!"
+              ),
+              Divider(thickness: 2,
+                color: Colors.black,),
               MyInputField(title: "Title", hint: "Enter your title", controller: _titleController,),
               MyInputField(title: "Note", hint: "Enter your note", controller: _noteController,),
               MyInputField(title: "Date", hint: DateFormat.yMd().format(_selectedDate),
