@@ -1,3 +1,4 @@
+import 'package:finaltwo/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 import 'item_model.dart';

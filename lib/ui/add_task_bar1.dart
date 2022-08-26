@@ -43,6 +43,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+<<<<<<< HEAD
+=======
+              Text(
+                "Add Task",
+                style: headingStyle,
+              ),
+>>>>>>> 3cb6df5a8a259399fb72c7df174405f6e41be931
               SizedBox(height: 17,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -128,7 +135,10 @@ class _AddTaskPageState extends State<AddTaskPage> {
               ),
               Divider(thickness: 2,
                 color: Colors.black,),
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3cb6df5a8a259399fb72c7df174405f6e41be931
               MyInputField(title: "Title", hint: "Enter your title", controller: _titleController,),
               MyInputField(title: "Note", hint: "Enter your note", controller: _noteController,),
               MyInputField(title: "Date", hint: DateFormat.yMd().format(_selectedDate),

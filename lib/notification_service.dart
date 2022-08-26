@@ -1,3 +1,4 @@
+import 'package:finaltwo/pages/utils2.dart';
 import 'package:finaltwo/ui/notify_page1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -81,6 +82,14 @@ class NotifyHelper {
 
 
   scheduledNotification(int hour, int minutes, Task task) async {
+    final bigPicturePath = await Utils2.downloadFile(
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png',
+      'bigPicture'
+    );
+
+    final styleInformation = BigPictureStyleInformation(
+      FilePathAndroidBitmap(bigPicturePath),
+    );
 
     await flutterLocalNotificationsPlugin.zonedSchedule(
         task.id!.toInt(),
@@ -88,14 +97,19 @@ class NotifyHelper {
         task.note,
         _convertTime(hour, minutes),
         //tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
-        const NotificationDetails(
+       NotificationDetails(
             android: AndroidNotificationDetails (
                 'your channel id 1',
                 'your channel name',
                 channelDescription: 'your channel description',
                 importance: Importance.max,
                 priority: Priority.high,
+<<<<<<< HEAD
                 sound: RawResourceAndroidNotificationSound('companion'),
+=======
+                sound: RawResourceAndroidNotificationSound('a_long_cold_sting'),
+              styleInformation: styleInformation,
+>>>>>>> 3cb6df5a8a259399fb72c7df174405f6e41be931
             )
         ),
         androidAllowWhileIdle: true,

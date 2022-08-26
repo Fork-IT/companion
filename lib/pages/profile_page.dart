@@ -276,6 +276,61 @@ class ProfilePage extends StatelessWidget{
                 },
               ),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
+<<<<<<< HEAD
+=======
+              // SizedBox(height: 25,),
+              // Text(
+              //     "Reminder notification :",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //         fontSize: 16,
+              //         fontWeight: FontWeight.bold
+              //     )
+              // ),
+              // SizedBox(height: 7,),
+              // Text(
+              //     "Turn ON to get reminder notification every hour.",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //       fontSize: 15,
+              //     )
+              // ),
+              //
+              // SizedBox(height: 12,),
+              // ToggleSwitch(
+              //   minWidth: 150.0,
+              //   cornerRadius: 20.0,
+              //   activeBgColors: [[Colors.red[800]!], [Colors.green[800]!]],
+              //   activeFgColor: Colors.white,
+              //   inactiveBgColor: Colors.grey,
+              //   inactiveFgColor: Colors.white,
+              //   initialLabelIndex: switchValue,
+              //   totalSwitches: 2,
+              //   labels: ['Off', 'On'],
+              //   radiusStyle: true,
+              //   onToggle: (switchValue) async {
+              //     print('switched to: $switchValue');
+              //     await UserPreferences.setSwitchValue(switchValue!);
+              //     if(switchValue == 0)
+              //     {
+              //       //off
+              //       snackBar = SnackBar(
+              //         content: Text('Reminder notification is turned OFF !'),
+              //       );
+              //       await notifyHelper.cancelNotification(1024);
+              //     }
+              //     else
+              //     {
+              //       //on
+              //       snackBar = SnackBar(
+              //         content: Text('Reminder notification is turned ON !'),
+              //       );
+              //       await notifyHelper.repeatNotification();
+              //     }
+              //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              //   },
+              // ),
+>>>>>>> 3cb6df5a8a259399fb72c7df174405f6e41be931
               SizedBox(height: 35,),
               Text(
                   "Total Score : ${global_score}",
