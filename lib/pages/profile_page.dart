@@ -18,7 +18,6 @@ import '../ui/home_page1.dart';
 import '../user_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import '../feedback_form.dart';
 
 int? theScore;
 int? switchValue;
@@ -45,7 +44,7 @@ class ProfilePage extends StatelessWidget{
       elevation: 2,
       margin: const EdgeInsets.all(8),
       child: Container(
-        decoration: index == 0 || index == 3 || index == 4
+        decoration: index == 0 || index == 2 || index == 4 || index == 6
             ? BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           gradient: const LinearGradient(
@@ -284,7 +283,6 @@ class ProfilePage extends StatelessWidget{
               //   ),
               // ),
               Text(''),
-              Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
                 leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
                 title: Text('App Guide',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
@@ -292,7 +290,6 @@ class ProfilePage extends StatelessWidget{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => AppInfo()),);
                 },
               ),
-              Text(''),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
               ListTile(
                 leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
@@ -333,44 +330,6 @@ class ProfilePage extends StatelessWidget{
                 },
               ),
               Divider(color: Theme.of(context).primaryColor, height: 1,),
-              ListTile(
-                leading: Icon(Icons.app_settings_alt, size: _drawerIconSize,color: Theme.of(context).accentColor),
-                title: Text('Daily Message',style: TextStyle(fontSize: _drawerFontSize,color: Theme.of(context).accentColor),),
-                onTap: () {
-                  final dttime = DateTime.now().hour;
-                  var bodymsg="Happy Jansmathami :)";
-                  var greetmsg;
-
-                  if(dttime > 5 && dttime < 12){
-                    greetmsg = "Good Morning!!";
-                  }else if(dttime > 12 && dttime < 17){
-                    greetmsg = "Good Afternoon!!";
-                  }
-                  else if(dttime > 17 && dttime < 20){
-                    greetmsg = "Good Evening!!";
-                  }
-                  else {
-                    greetmsg = "Good Night!!";
-                  }
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text("Today"),
-                      content: Text(
-                          "${greetmsg}"+"\n\n${bodymsg}"
-                        // "Hello there a message from "
-                      ),
-                      actions: [
-                        TextButton(
-                            onPressed: () async => await launch("https://wa.me/${919016775087}?text=${greetmsg}"+"${bodymsg}"),
-                            child: Text('Share on Whatsapp')
-                        )
-                      ],
-                    ),
-                  );
-                },
-              ),
-<<<<<<< HEAD
               // SizedBox(height: 25,),
               // Text(
               //     "Reminder notification :",
@@ -424,7 +383,6 @@ class ProfilePage extends StatelessWidget{
               //   },
               // ),
 
-=======
               SizedBox(height: 35,),
               Text(
                   "Total Score : ${global_score}",
@@ -440,7 +398,6 @@ class ProfilePage extends StatelessWidget{
               //   "Feedback"
               // )
               // )
->>>>>>> 4050a74a34c7a91e16a9b875a0e65683fb380e2b
             ],
           ),
         ),

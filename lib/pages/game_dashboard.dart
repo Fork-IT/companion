@@ -55,16 +55,17 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 150,
+                              height: 140,
                               child: Image.asset('assets/images/drag.png',)
                           ),
                           const Spacer(),
                           const Text(
-                            'Match the pair',
+                            'Lo Mil Gaya',
                             style: TextStyle(
-                                color: Colors.deepOrange,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
+                                color: Colors.brown,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              fontFamily: "Dynapuff"
                             ),
                           )
                         ],
@@ -96,17 +97,18 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 150,
+                              height: 140,
                               child: Image.asset('assets/images/quizzie.png',)
 
                           ),
                           const Spacer(),
                           const Text(
-                            'Quick Quizzie',
+                            'Kesi Ye Paheli',
                             style: TextStyle(
-                                color: Colors.pinkAccent,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
+                                color: Colors.pink,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              fontFamily: "Dynapuff"
                             ),
 
                           )
@@ -138,17 +140,18 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 150,
+                              height: 140,
                               child: Image.asset('assets/images/guess.png',)
 
                           ),
                           const Spacer(),
                           const Text(
-                            'Test Your Brain !!',
+                            'Yaado ki Baarat',
                             style: TextStyle(
-                                color: Colors.green,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
+                                color: Colors.blue,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              fontFamily: "Dynapuff"
                             ),
 
                           )
@@ -181,17 +184,18 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 150,
+                              height: 140,
                               child: Image.asset('assets/images/tic-tac-toe.png',)
 
                           ),
                           const Spacer(),
                           const Text(
-                            'Tic Tac Toe Game',
+                            'Galti se mistake',
                             style: TextStyle(
-                                color: Colors.brown,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
+                                color: Colors.purple,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              fontFamily: "Dynapuff"
                             ),
 
                           )
@@ -224,17 +228,18 @@ class GameDashboard extends StatelessWidget {
                       child: Column(
                         children:  [
                           SizedBox(
-                              height: 160,
+                              height: 140,
                               child: Image.asset('assets/images/pz.png',)
 
                           ),
                           const Spacer(),
                           const Text(
-                            'Sliding Puzzle',
+                            'Abhi to Game shuru hui hai',
                             style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
+                                color: Colors.blueGrey,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              fontFamily: "Dynapuff"
                             ),
 
                           )
@@ -245,7 +250,6 @@ class GameDashboard extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white70,
                         borderRadius: BorderRadius.circular(15)
-
                     ),
                   ),
                 ),
